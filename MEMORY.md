@@ -1,0 +1,2 @@
+# 00 – REBASE-LOG
+\n- [[visual-reference]] Guía de mejores prácticas visuales (enlace directo a `docs/01-reference/visual-reference.md`. Carpeta física: `G:/Mi unidad/Projects/Farutech/BuenasPracticas/`) - Estado: ✅ **Preservada intacta**. No contiene instrucciones, solo ejemplos gráficos de UX/UI y recursos auxiliares (PDFs, GIFs, zip).

@@ -1,3 +1,146 @@
+# Farutech Cloud Platform Testing Quality Guide
+
+This document outlines our comprehensive strategy for testing and quality assurance across all projects within the Farutech Cloud Platform ecosystem.
+
+## Strategic Testing Principles
+
+- **Quality from the Start:** Testing begins with requirements definition
+- **Full Automation:** All testable elements should be automated
+- **Layered Protection:** Multi-level testing for different risks
+- **Immediate Feedback:** Test results within 5 minutes
+- **Measurable Quality:** Objective metrics to evaluate software state
+
+## Test Pyramid
+
+```
+          Unit Tests (70%)
+                ↓
+      Integration Tests (20%)
+                ↓
+    End-to-End Tests (10%)
+```
+
+### Unit Tests
+
+- **Objective:** Validate individual code units
+- **Scope:** Functions, methods, components
+- **Frequency:** On every commit
+- **Time target:** < 30 seconds
+- **Tools:** Jest (frontend), xUnit/NUnit (backend), Go test (workers)
+
+### Integration Tests
+
+- **Objective:** Validate component interactions
+- **Scope:** APIs, services, databases, workers
+- **Frequency:** On every PR
+- **Time target:** < 5 minutes
+- **Tools:** TestContainers, WireMock, Docker Compose
+
+### End-to--End Tests
+
+- **Objective:** Validate complete user flows
+- **Scope:** Full applications, real scenarios
+- **Frequency:** Daily and before production
+- **Time target:** < 15 minutes
+- **Tools:** Playwright, Cypress, Selenium
+
+## Specialized Test Types
+
+### Security Testing
+
+- **SAST:** Static code analysis
+- **DAST:** Dynamic application analysis
+- **SCA:** Dependency analysis
+- **Penetration Testing:** Vulnerability testing
+
+### Performance Testing
+
+- **Load:** Multi-user simulation
+- **Stress:** Maximum capacity limits
+- **Resilience:** Failure behavior
+- **Scalability:** Proportional growth
+
+### Usability Testing
+
+- **Accessibility:** WCAG compliance
+- **Compatibility:** Browsers and devices
+- **Experience:** User flows
+
+## Coverage Strategy
+
+### Coverage Targets
+
+| Type | Target | Measurement |
+|------|--------|-------------|
+| **Unit** | > 80% | Istanbul, Coverlet |
+| **Integration** | > 60% | Custom metrics |
+| **E2E** | > 40% | Custom metrics |
+| **Security** | 100% | SAST/DAST reports |
+
+### Justified Exclusions
+
+- Automatically generated code
+- Third-party code
+- Identified dead code
+- Edge cases with no functional impact
+
+## Testing Process
+
+### In the Development Flow
+
+1. **Pre-commit:** Formatting and basic validation
+2. **CI/CD Pipeline:** 
+   - Unit tests
+   - Static analysis
+   - Vulnerability scanning
+3. **Post-merge:** 
+   - Integration tests
+   - E2E tests
+   - Security tests
+4. **Pre-production:** 
+   - Load testing
+   - Usability testing
+   - Manual validation
+
+### In Production
+
+- **Canary Releases:** Metric monitoring
+- **Feature Flags:** Gradual activation
+- **Observability:** Logs, metrics and traces
+- **Alerting:** Early problem detection
+
+## Quality Metrics
+
+| Metric | Target | Frequency |
+|--------|--------|----------|
+| **Failure Rate** | < 0.5% | Per build |
+| **Execution Time** | < 10 min | Per pipeline |
+| **Unit Coverage** | > 80% | Per PR |
+| **Critical Vulnerabilities** | 0 | Per build |
+| **Mean Time to Resolution** | < 2 hours | Per incident |
+
+## Future Evolution
+
+### Artificial Intelligence in Testing
+
+- Automated test case generation
+- Predictive failure analysis
+- Test suite optimization
+- Automated regression identification
+
+### Advanced Automation
+
+- Self-correcting tests
+- Intelligent mock generation
+- Risk-based coverage analysis
+- Dynamic test prioritization
+
+## Reference Documentation
+
+- [CONFIGURATION_STANDARDS.md](../CONFIGURATION_STANDARDS.md): Configuration standards
+- [EngineeringDevelopmentStandardsAndBestPracticesHandbook.md](./EngineeringDevelopmentStandardsAndBestPracticesHandbook.md): Technical guide
+- [ArchitectureDecisionRecords.md](./ArchitectureDecisionRecords.md): Architectural decisions
+- [FarutechCloudPlatformArchitecture.md](./FarutechCloudPlatformArchitecture.md): Overall architecture
 # Farutech Cloud Platform
 ## Guía de Estrategia de Pruebas y Calidad
 
