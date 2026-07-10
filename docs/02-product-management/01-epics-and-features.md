@@ -1,394 +1,98 @@
-# Farutech Cloud Platform
-## Documentación de Épicas y Features
+# Farutech Cloud Platform — Épicas y Features
+
+> **Estado**: Vigente V1 · **Owner**: CPO / Principal PM (Feifei) · **Aprobación**: Product Management + Architecture Board
+> **Fuente**: Artefacto de producto obligatorio del PM. Extraído fielmente del transcript de sesión; ver `docs/_archive/legacy-roots/pm-artifacts-source.md`.
+> **Resolución de colisión de IDs**: Las épicas previas (EPIC-001..006, archivo legado en `docs/_archive/legacy-roots/02-product-management/01-epics-and-features.md`) quedan **suprimidas** por las siguientes. La numeración EPIC-001/002/003 es la canónica post-decisión ejecutiva (§A).
+
+## Épicas Principales (Canónicas)
+
+### EPIC-001: Implementación de Gobernanza y SSOT Documental
+
+Normalización del repositorio, purga de duplicados e implementación de validaciones en pipelines (CI).
+
+**Alcance clave**:
+- Purga de duplicados byte-a-byte y nomenclaturas dobles (PascalCase vs UPPERCASE).
+- Consolidación SSOT en estructura numerada definitiva.
+- `validate_structure.sh` en CI/CD (rechaza PRs con enlaces rotos o información duplicada).
+- Establecimiento de pipelines CI para validar el DoD obligatoriamente (Playwright E2E + pruebas de integración API).
+
+### EPIC-002: Core Multi-Tenancy Foundation
+
+Infraestructura base de aislamiento lógico, inyección de dependencias y CQRS nativo de alto rendimiento.
+
+**Alcance clave**:
+- Aislamiento lógico por `Tenant_ID` en PostgreSQL (Shared/Dedicated híbrido).
+- CQRS nativo vía inyección de dependencias en .NET 10 (sin MediatR — ADR-012).
+- Inyección y validación del contexto de tenant en el middleware de la aplicación.
+- API de creación de estructuras de tenant (onboarding < 5 min).
+
+### EPIC-003: Centralized Identity Management (IAM)
+
+Implementación y configuración de Keycloak como proveedor de OIDC/OAuth2 y MFA.
+
+**Alcance clave**:
+- Despliegue de Keycloak (Open Source) como IdP central.
+- Redirección e integración nativa login/logout.
+- Gestión de roles y MFA forzado por Tenant Admin.
+- Emisión de JWT firmados asimétricamente (ADR-011).
 
 ---
 
-# Tabla de Contenidos
+## Notas de Gobernanza (no alteran el alcance canónico)
 
-1. [Épicas Principales](#Épicas-principales)
-2. [Features Detalladas](#features-detalladas)
-3. [Historias de Usuario](#historias-de-usuario)
-4. [Tareas Técnicas](#tareas-técnicas)
-5. [Definiciones de Listo](#definiciones-de-listo)
+### División de Seguridad (decisión A.17)
 
----
+La épica legada **EPIC-006 (Seguridad y Auditoría)** se divide en épicas atómicas y testeables:
+- **Gestión IAM** → absorbida por **EPIC-003**.
+- **Logging** → épica atómica pendiente de desglose (post-MVP).
+- **Control de Acceso** → épica atómica pendiente de desglose (post-MVP).
 
-## Épicas Principales
+Estas dos últimas se formalizarán como artefactos independientes cuando el roadmap entre en fase de Compliance (V2).
 
-### EPIC-001: Sistema de Identidad Empresarial
+### Features y Tareas Técnicas
 
-**Descripción:** Implementar un sistema completo de identidad que permita a los usuarios autenticarse, gestionar perfiles, roles y permisos en la plataforma.
+Las features detalladas (FEATURE-001..006) y tareas técnicas (TASK-001..005) del legado se archivan en `docs/_archive/legacy-roots/02-product-management/01-epics-and-features.md` y se red erivan a partir de las épicas canónicas antes del inicio de cada sprint.
 
-**Incluye:**
-- Login y registro de usuarios
-- Gestión de perfiles de usuario
-- Roles y permisos
-- Seguridad y auditoría
-- Integración con proveedores externos (Microsoft, Google)
+## Definition of Ready (DoR) — Canónico
 
-**Valor de Negocio:** Permitir el acceso seguro y controlado a la plataforma por parte de usuarios y organizaciones.
+Una historia inicia cuando:
+- [ ] Tiene un objetivo claro y alcance definido.
+- [ ] Tiene criterios de aceptación definidos (formato BDD *Given/When/Then*).
+- [ ] Tiene diseño aprobado (cuando aplica).
+- [ ] Tiene dependencias identificadas y resueltas.
+- [ ] Tiene riesgos conocidos y mitigados.
+- [ ] Tiene estimación realizada.
+- [ ] Tiene asignación de recursos.
+- [ ] **Incluye plan de pruebas automatizadas (UI/API)** — ninguna historia pasa a "Ready" sin cobertura de automatización definida.
 
----
+## Definition of Done (DoD) — Canónico
 
-### EPIC-002: Gestión de Organizaciones
-
-**Descripción:** Permitir a los usuarios crear y gestionar organizaciones, que representan empresas, clientes o entidades que utilizan Farutech.
-
-**Incluye:**
-- Creación de organizaciones
-- Gestión de usuarios por organización
-- Configuración de organización
-- Propietarios y administradores
-- Invitación de miembros
-
-**Valor de Negocio:** Permitir la segmentación y aislamiento de clientes en la plataforma.
-
----
-
-### EPIC-003: Marketplace y Provisionamiento
-
-**Descripción:** Catálogo de aplicaciones donde las organizaciones pueden seleccionar y crear nuevas instancias configuradas.
-
-**Incluye:**
-- Catálogo de aplicaciones
-- Selección de paquetes
-- Configuración de instancias
-- Proceso de provisioning
-- Validación de requisitos
-
-**Valor de Negocio:** Permitir a los clientes crear nuevas instancias de aplicaciones de forma autónoma.
-
----
-
-### EPIC-004: Gestión de Instancias SaaS
-
-**Descripción:** Sistema para gestionar instancias individuales de aplicaciones, incluyendo configuración, recursos y ciclo de vida.
-
-**Incluye:**
-- Creación de instancias
-- Gestión de recursos
-- Configuración de despliegue (shared/dedicated)
-- Ciclo de vida de instancias
-- Monitoreo y alertas
-
-**Valor de Negocio:** Permitir la operación independiente de múltiples instancias de aplicaciones.
-
----
-
-### EPIC-005: Plataforma de Facturación
-
-**Descripción:** Sistema de facturación que gestione suscripciones, pagos y ciclos de facturación para clientes.
-
-**Incluye:**
-- Suscripciones
-- Planes y precios
-- Procesamiento de pagos
-- Facturación automática
-- Gestión de cobros
-
-**Valor de Negocio:** Habilitar el modelo de negocio SaaS con suscripciones recurrentes.
-
----
-
-### EPIC-006: Seguridad y Auditoría
-
-**Descripción:** Implementar controles de seguridad, auditoría y cumplimiento en toda la plataforma.
-
-**Incluye:**
-- Auditoría de operaciones
-- Control de acceso
-- Seguridad perimetral
-- Registro de eventos
-- Alertas de seguridad
-
-**Valor de Negocio:** Garantizar la seguridad y cumplimiento regulatorio de la plataforma.
-
----
-
-## Features Detalladas
-
-### FEATURE-001: Login con Microsoft
-
-**Descripción:** Permitir a los usuarios autenticarse usando sus credenciales de Microsoft.
-
-**Criterios de Aceptación:**
-- El usuario puede iniciar sesión con Microsoft
-- La autenticación es segura y confiable
-- El perfil se crea automáticamente si no existe
-- Se mantiene la sesión de forma segura
-
-**Prioridad:** Alta
-
----
-
-### FEATURE-002: Crear Instancia SaaS
-
-**Descripción:** Permitir a los usuarios crear una nueva instancia de una aplicación.
-
-**Criterios de Aceptación:**
-- El usuario puede seleccionar una aplicación
-- El usuario puede elegir un paquete
-- El usuario puede configurar la instancia
-- El sistema crea la instancia correctamente
-- La instancia es accesible al usuario
-
-**Prioridad:** Alta
-
----
-
-### FEATURE-003: Gestión de Usuarios por Organización
-
-**Descripción:** Permitir a los administradores gestionar usuarios dentro de una organización.
-
-**Criterios de Aceptación:**
-- El administrador puede invitar usuarios
-- El administrador puede asignar roles
-- El administrador puede desactivar usuarios
-- El sistema notifica a los usuarios invitados
-
-**Prioridad:** Media
-
----
-
-### FEATURE-004: Despliegue Shared/Dedicated
-
-**Descripción:** Permitir elegir entre despliegue compartido o dedicado para instancias.
-
-**Criterios de Aceptación:**
-- El usuario puede seleccionar el tipo de despliegue
-- El sistema configura los recursos apropiadamente
-- El costo se calcula según el tipo de despliegue
-- La instancia se crea con los recursos correctos
-
-**Prioridad:** Media
-
----
-
-### FEATURE-005: Actualizaciones Automáticas
-
-**Descripción:** Implementar sistema de actualizaciones automáticas para instancias.
-
-**Criterios de Aceptación:**
-- Las instancias reciben actualizaciones automáticamente
-- El usuario es notificado de las actualizaciones
-- Existe un sistema de rollback en caso de fallos
-- Las actualizaciones no interrumpen el servicio
-
-**Prioridad:** Media
-
----
-
-### FEATURE-006: Marketplace de Aplicaciones
-
-**Descripción:** Catálogo de aplicaciones disponibles para los clientes.
-
-**Criterios de Aceptación:**
-- El usuario puede navegar el catálogo
-- El usuario puede ver detalles de aplicaciones
-- El usuario puede filtrar aplicaciones
-- El usuario puede buscar aplicaciones
-- El catálogo es actualizado dinámicamente
-
-**Prioridad:** Alta
-
----
-
-## Historias de Usuario
-
-### US-001: Como administrador quiero crear una instancia para habilitar una aplicación SaaS
-
-**Descripción:** Como usuario administrador de una organización, quiero poder crear una nueva instancia de una aplicación para que mis usuarios puedan comenzar a usarla.
-
-**Criterios de Aceptación:**
-- Puedo seleccionar la aplicación deseada
-- Puedo elegir el paquete apropiado
-- Puedo configurar los parámetros iniciales
-- Puedo seleccionar el tipo de despliegue (shared/dedicated)
-- La instancia se crea correctamente
-- Recibo acceso a la nueva instancia
-
-**Estimación:** 8 puntos
-
----
-
-### US-002: Como usuario quiero iniciar sesión con Microsoft para acceder a la plataforma
-
-**Descripción:** Como usuario con cuenta de Microsoft, quiero poder iniciar sesión directamente con mis credenciales de Microsoft para acceder a Farutech Cloud Platform.
-
-**Criterios de Aceptación:**
-- Puedo seleccionar la opción de login con Microsoft
-- Soy redirigido a la página de autenticación de Microsoft
-- Puedo ingresar mis credenciales de Microsoft
-- Soy redirigido de vuelta a la plataforma
-- Mi sesión es iniciada correctamente
-
-**Estimación:** 5 puntos
-
----
-
-### US-003: Como administrador quiero gestionar usuarios de mi organización para controlar el acceso
-
-**Descripción:** Como administrador de una organización, quiero poder invitar, asignar roles y gestionar usuarios para controlar quién tiene acceso a nuestras instancias.
-
-**Criterios de Aceptación:**
-- Puedo invitar nuevos usuarios por email
-- Puedo asignar roles específicos a los usuarios
-- Puedo ver la lista de usuarios de la organización
-- Puedo desactivar usuarios si es necesario
-- Los usuarios invitados reciben notificación por email
-
-**Estimación:** 8 puntos
-
----
-
-### US-004: Como cliente quiero seleccionar un paquete para obtener las funcionalidades que necesito
-
-**Descripción:** Como cliente interesado en una aplicación, quiero poder seleccionar el paquete que mejor se adapte a mis necesidades para obtener las funcionalidades específicas que requiero.
-
-**Criterios de Aceptación:**
-- Puedo ver los paquetes disponibles para una aplicación
-- Puedo comparar las funcionalidades entre paquetes
-- Puedo ver los precios de cada paquete
-- Puedo seleccionar un paquete para mi instancia
-- Recibo confirmación de mi selección
-
-**Estimación:** 5 puntos
-
----
-
-### US-005: Como cliente quiero elegir entre despliegue shared o dedicated según mis necesidades
-
-**Descripción:** Como cliente, quiero poder elegir entre un despliegue compartido o dedicado para mi instancia según mis requisitos de rendimiento, seguridad y costo.
-
-**Criterios de Aceptación:**
-- Puedo ver las diferencias entre shared y dedicated
-- Puedo ver el costo de cada opción
-- Puedo seleccionar el tipo de despliegue
-- El sistema me muestra las implicaciones de mi elección
-- La instancia se configura según mi elección
-
-**Estimación:** 8 puntos
-
----
-
-## Tareas Técnicas
-
-### TASK-001: Implementar endpoint de creación de instancias
-
-**Descripción:** Implementar el endpoint API que permita crear nuevas instancias de aplicaciones.
-
-**Subtareas:**
-- [ ] Definir modelo de datos para instancia
-- [ ] Implementar validaciones de entrada
-- [ ] Implementar lógica de creación de recursos
-- [ ] Implementar pruebas unitarias
-- [ ] Documentar el endpoint
-
-**Tecnología:** .NET 10, C#
-
----
-
-### TASK-002: Configurar autenticación con Microsoft
-
-**Descripción:** Configurar el sistema de autenticación para permitir login con Microsoft.
-
-**Subtareas:**
-- [ ] Registrar aplicación en Azure AD
-- [ ] Configurar middleware de autenticación
-- [ ] Implementar controlador de callback
-- [ ] Manejar creación de usuarios
-- [ ] Probar flujo de autenticación
-
-**Tecnología:** .NET 10, Azure AD
-
----
-
-### TASK-003: Implementar sistema de notificaciones
-
-**Descripción:** Implementar un sistema de notificaciones para informar a los usuarios sobre eventos importantes.
-
-**Subtareas:**
-- [ ] Definir modelo de notificación
-- [ ] Implementar servicio de envío
-- [ ] Configurar canales (email, push)
-- [ ] Implementar UI de notificaciones
-- [ ] Implementar pruebas
-
-**Tecnología:** .NET 10, Email service
-
----
-
-### TASK-004: Crear componente de catálogo de aplicaciones
-
-**Descripción:** Crear el componente frontend que muestre el catálogo de aplicaciones disponibles.
-
-**Subtareas:**
-- [ ] Diseñar UI del catálogo
-- [ ] Implementar componente React
-- [ ] Conectar con API de aplicaciones
-- [ ] Implementar filtros y búsqueda
-- [ ] Probar componente
-
-**Tecnología:** React, TypeScript, Vite
-
----
-
-### TASK-005: Implementar lógica de despliegue diferenciado
-
-**Descripción:** Implementar la lógica para crear instancias con diferentes tipos de despliegue (shared/dedicated).
-
-**Subtareas:**
-- [ ] Extender modelo de instancia
-- [ ] Implementar lógica de creación de recursos
-- [ ] Configurar diferentes perfiles de recursos
-- [ ] Implementar pruebas de despliegue
-- [ ] Documentar proceso
-
-**Tecnología:** .NET 10, Docker, Infrastructure
-
----
-
-## Definiciones de Listo
-
-### Definition of Ready (DoR)
-
-Una tarea solo inicia cuando:
-
-- [ ] Tiene un objetivo claro
-- [ ] Tiene alcance definido
-- [ ] Tiene criterios de aceptación definidos
-- [ ] Tiene diseño aprobado (cuando aplica)
-- [ ] Tiene dependencias identificadas y resueltas
-- [ ] Tiene riesgos conocidos y mitigados
-- [ ] Tiene estimación realizada
-- [ ] Tiene asignación de recursos
-
-### Definition of Done (DoD)
-
-Una tarea está terminada cuando:
+Una historia está terminada cuando:
 
 **Código:**
-- [ ] Implementado según especificaciones
-- [ ] Revisado por al menos un par (Code Review)
-- [ ] Cumple con estándares de calidad
+- [ ] Implementado según especificaciones.
+- [ ] Revisado por al menos un par (Code Review).
+- [ ] Cumple con estándares de calidad.
 
 **Testing:**
-- [ ] Pruebas unitarias implementadas y pasando
-- [ ] Pruebas de integración implementadas y pasando
-- [ ] Pruebas E2E implementadas cuando aplica y pasando
-- [ ] Cobertura de pruebas aceptable
+- [ ] Pruebas unitarias implementadas y pasando.
+- [ ] Pruebas de integración implementadas y pasando.
+- [ ] Pruebas E2E (Playwright) implementadas cuando aplica y pasando.
+- [ ] Cobertura de pruebas aceptable (objetivo > 85% E2E en CI).
 
 **Calidad:**
-- [ ] Sin vulnerabilidades de seguridad críticas
-- [ ] Documentación actualizada
-- [ ] No hay deuda técnica acumulada
+- [ ] Sin vulnerabilidades de seguridad críticas (OWASP Top 10 estricto desde V1).
+- [ ] Documentación actualizada.
+- [ ] No hay deuda técnica acumulada.
 
 **Operación:**
-- [ ] Pipeline CI/CD exitoso
-- [ ] Artefacto desplegable
-- [ ] Cumple con estándares arquitectónicos
+- [ ] Pipeline CI/CD exitoso (incluye `validate_structure.sh`).
+- [ ] Artefacto desplegable.
+- [ ] Cumple con estándares arquitectónicos.
 
 **Producto:**
-- [ ] Criterios de aceptación cumplidos
-- [ ] Aprobado por el responsable de producto
-- [ ] Pruebas de usuario completadas cuando aplica
+- [ ] Criterios de aceptación (BDD) cumplidos.
+- [ ] Aprobado por el responsable de producto.
+- [ ] Pruebas de usuario completadas cuando aplica.
+
+> **Estándar único (decisión A.9)**: Ninguna historia pasa a "Done" sin cobertura de automatización UI/API. BDD es obligatorio en todos los criterios de aceptación.

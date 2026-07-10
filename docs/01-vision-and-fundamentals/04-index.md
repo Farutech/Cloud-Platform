@@ -9,8 +9,10 @@
 - [Platform Architecture (Documento Fundacional)](02-platform-architecture.md)
 
 ## Gestión de Producto
+- [PRD (Core)](../02-product-management/00-prd-core.md)
 - [Épicas y Features](../02-product-management/01-epics-and-features.md)
 - [Roadmap / Tareas](../02-product-management/02-roadmap-tasks.md)
+- [User Stories & AC (BDD)](../02-product-management/05-user-stories.md)
 - [Task Management](../02-product-management/03-task-management.md)
 - [Team Organization](../02-product-management/04-team-organization.md)
 
