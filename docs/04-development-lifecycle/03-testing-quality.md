@@ -257,7 +257,7 @@ Toda funcionalidad debe contar con pruebas automatizadas adecuadas. Las pruebas 
 - [Development Lifecycle](01-development-lifecycle.md)
 
 > **Próximos Pasos**:  
-> - Configurar [pipelines de pruebas](../02-deployment-operations.md#cicd-pipeline)  
+> - Configurar [pipelines de pruebas](02-deployment-operations.md#cicd-pipeline)  
 > - Implementar [métricas de calidad](#métricas-de-calidad)  
 > - Definir [frameworks de pruebas](#frameworks-y-herramientas)  
 

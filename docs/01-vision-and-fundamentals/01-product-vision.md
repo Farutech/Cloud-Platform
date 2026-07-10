@@ -40,12 +40,12 @@ Ser la plataforma líder que permite a miles de organizaciones acceder a solucio
 - Arquitectura evolutiva y mantenible
 
 ## Referencias
-- [Platform Fundamentals](02-platform-fundamentals.md)
-- [Platform Architecture](03-platform-architecture.md)
+- [Platform Fundamentals](02-platform-architecture.md)
+- [Platform Architecture](02-platform-architecture.md)
 
 > **Próximos Pasos**:  
-> - Revisar [Roadmap](../02-product-management/01-roadmap.md) para alineación estratégica  
-> - Consultar [Épicas y Features](../02-product-management/02-epics-and-features.md) para comprensión de funcionalidades  
+> - Revisar [Roadmap](../02-product-management/02-roadmap-tasks.md) para alineación estratégica  
+> - Consultar [Épicas y Features](../02-product-management/01-epics-and-features.md) para comprensión de funcionalidades  
 
 ---
 *Versión del documento: 1.0.0 | Creado: 2026-07-07 | Revisión: Trimestral*
