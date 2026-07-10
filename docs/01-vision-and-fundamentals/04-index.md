@@ -8,6 +8,11 @@
 - [Product Vision](01-product-vision.md)
 - [Platform Architecture (Documento Fundacional)](02-platform-architecture.md)
 
+## Gobernanza y Meta
+- [Acta de Decisiones Ejecutivas (A.1–A.17) y Plan de Gobernanza](../00-meta/00-governance-decisions-2026-07.md)
+- [Reporte Ejecutivo de Auditoría (22 secciones)](../00-meta/02-executive-report.md)
+- [Auditoría BuenasPracticas (A.12)](../00-meta/01-buenaspracticas-audit.md)
+
 ## Gestión de Producto
 - [PRD (Core)](../02-product-management/00-prd-core.md)
 - [Épicas y Features](../02-product-management/01-epics-and-features.md)
