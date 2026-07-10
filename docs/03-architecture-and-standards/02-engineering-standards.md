@@ -42,7 +42,7 @@ Todo código funcional debe incluir pruebas automatizadas adecuadas. La cobertur
 - Usar FluentValidation para validación de modelos
 - Implementar manejo de errores global
 - Usar logging estructurado con Serilog
-- Implementar autenticación y autorización basada en JWT y claims
+- Implementar autenticación y autorización basada en JWT y claims, a través de Keycloak como IdP (OIDC/OAuth2 + MFA — ver [ADR-011](01-architecture-decision-records/011-identity-provider-keycloak.md))
 
 ### 3.4 Entity Framework Core
 - Usar Code First approach

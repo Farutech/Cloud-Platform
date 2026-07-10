@@ -237,7 +237,7 @@ No se recomienda API directa, sino:
 ## Seguridad y Acceso
 
 ### Autenticación
-- Tokens JWT firmados asimétricamente
+- Identidad centralizada con **Keycloak** (OIDC / OAuth 2.0 + MFA) que emite tokens JWT firmados asimétricamente — ver [ADR-011](../03-architecture-and-standards/01-architecture-decision-records/011-identity-provider-keycloak.md)
 - Soporte para proveedores externos (Microsoft, Google)
 
 ### Autorización

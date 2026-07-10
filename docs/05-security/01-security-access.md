@@ -56,10 +56,11 @@ Los usuarios y sistemas deben tener el mínimo nivel de acceso necesario para re
 
 #### Mecanismos de Autenticación
 
-##### OAuth 2.0 / OpenID Connect
+##### OAuth 2.0 / OpenID Connect (Keycloak)
+- Implementado con **Keycloak** como IdP (OIDC/OAuth2 + MFA) — ver [ADR-011](../03-architecture-and-standards/01-architecture-decision-records/011-identity-provider-keycloak.md)
 - Protocolo estándar para autorización
 - Integración con proveedores externos
-- Tokens JWT para autenticación
+- Tokens JWT para autenticación (emitidos por Keycloak, firma asimétrica)
 - Refresh token rotation
 
 ##### Multi-Factor Authentication (MFA)

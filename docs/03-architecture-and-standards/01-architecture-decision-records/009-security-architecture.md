@@ -59,7 +59,7 @@ Implementaremos una arquitectura de seguridad basada en Zero Trust con autentica
 - [Modelo de Aislamiento Multi-Tenant](006-multi-tenant-model.md)
 
 > **Próximos Pasos**:
-> - Definir el proveedor de identidad (IdP) y el esquema de emisión de tokens
+> - Definir el proveedor de identidad: **Keycloak** (OIDC/OAuth2 + MFA) emite los tokens JWT — ver [ADR-011](011-identity-provider-keycloak.md)
 > - Especificar las políticas ABAC por dominio
 
 ---
