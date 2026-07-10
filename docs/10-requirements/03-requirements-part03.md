@@ -37,7 +37,7 @@ La arquitectura backend sigue principios de Clean Architecture + Domain Driven D
 - **CQRS**: Command Query Responsibility Segregation
 - **DDD**: Domain Driven Design para dominios complejos
 - **Entity Framework Core**: ORM para persistencia
-- **MediatR**: Para implementación de CQRS
+- **CQRS (nativo vía DI)**: Para separación de comandos y queries, sin MediatR (ver ADR-012)
 - **FluentValidation**: Para validación de comandos/queries
 
 ##### Go Workers
