@@ -264,6 +264,87 @@ La documentación debe mejorar constantemente basada en feedback y experiencia d
 - Tendencias en gestión de conocimiento
 - Mejores prácticas emergentes
 
+### Tipos de Conocimiento
+
+> _Fusionado desde `docs/_archive/legacy-roots/KnowledgeManagementGuide.md` (reconciliación SSOT)._
+
+| Categoría | Descripción | Ejemplos |
+|-----------|-------------|----------|
+| **Explícito** | Conocimiento formalizado y documentado | Documentación técnica, manuales, especificaciones |
+| **Implícito** | Conocimiento tácito y experiencial | Buenas prácticas, lecciones aprendidas, decisiones técnicas |
+| **Tácito** | Conocimiento personal y difícil de articular | Intuición técnica, habilidades de resolución de problemas |
+
+### Proceso de Gestión del Conocimiento
+
+> _Fusionado desde `docs/_archive/legacy-roots/KnowledgeManagementGuide.md` (reconciliación SSOT)._
+
+#### 1. Captura
+
+- Documentación de decisiones arquitectónicas (ADRs)
+- Registro de lecciones aprendidas
+- Documentación de soluciones a problemas comunes
+- Captura de conocimiento implícito en reuniones y sesiones
+
+#### 2. Organización
+
+- Clasificación por dominio y área funcional
+- Estructuración jerárquica (fundamental → especializada)
+- Creación de relaciones entre documentos
+- Indexación y etiquetado semántico
+
+#### 3. Almacenamiento
+
+- Repositorios centralizados (GitHub, Confluence)
+- Versionamiento de documentos
+- Control de acceso y permisos
+- Copias de seguridad y recuperación
+
+#### 4. Compartición
+
+- Canales de comunicación estructurados
+- Sesiones de conocimiento compartido
+- Mentoría y coaching
+- Comunidades de práctica
+
+#### 5. Aplicación
+
+- Integración con flujos de trabajo diarios
+- Búsqueda y recuperación eficiente
+- Recomendaciones contextuales
+- Soporte a la toma de decisiones
+
+#### 6. Actualización
+
+- Revisiones periódicas de contenido
+- Alertas de obsolescencia
+- Actualización automática desde código
+- Feedback continuo de usuarios
+
+### Herramientas y Tecnologías
+
+> _Fusionado desde `docs/_archive/legacy-roots/KnowledgeManagementGuide.md` (reconciliación SSOT)._
+
+| Herramienta | Uso | Integración |
+|-------------|-----|-------------|
+| **Confluence** | Documentación colaborativa y conocimiento explícito | Jira, Slack |
+| **GitHub Wiki** | Documentación técnica y conocimiento implícito | GitHub repositorios |
+| **Qoder AI Assistant** | Asistencia inteligente y generación de conocimiento | VS Code, GitHub |
+| **Mermaid** | Diagramas de flujo y arquitectura | GitHub, VS Code |
+| **OpenAPI** | Especificaciones de APIs y conocimiento técnico | Swagger UI |
+| **VS Code Extensions** | Edición de Markdown y soporte a conocimiento | Local development |
+
+### Métricas Clave
+
+> _Fusionado desde `docs/_archive/legacy-roots/KnowledgeManagementGuide.md` (reconciliación SSOT)._
+
+| Métrica | Fórmula | Objetivo |
+|---------|---------|----------|
+| **Cobertura de conocimiento** | (Documentos cubiertos / Áreas totales) × 100% | ≥ 95% |
+| **Tiempo de búsqueda** | Tiempo promedio para encontrar información | < 2 minutos |
+| **Satisfacción del equipo** | Encuestas de satisfacción con conocimiento | ≥ 85% |
+| **Uso de documentación** | Número de consultas por documento | ≥ 10 consultas/semana |
+| **Calidad percibida** | Calificación de utilidad por usuarios | ≥ 4.5/5 |
+
 ## Referencias
 - [Knowledge Architecture](../03-architecture-and-standards/12-knowledge-architecture.md)
 - [Documentation Guide](../08-documentation/01-documentation-guide.md)

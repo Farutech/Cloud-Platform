@@ -236,6 +236,101 @@ La organización debe aprender de la gestión del conocimiento:
 - **Errores comunes**: Prevención de problemas
 - **Éxitos replicables**: Buenas prácticas a escalar
 
+### Tipos de Documentación
+
+> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT)._
+
+#### Documentación Técnica
+
+| Tipo | Ubicación | Responsabilidad | Actualización |
+|------|-----------|-----------------|---------------|
+| **Código** | Comentarios en código | Desarrolladores | En cada cambio |
+| **APIs** | OpenAPI specs | Arquitectos | En cada cambio de API |
+| **Arquitectura** | ADRs | Arquitectos | En cada decisión clave |
+| **Configuración** | Config files | DevOps | En cada cambio |
+| **Infraestructura** | IaC | DevOps | En cada cambio |
+
+#### Documentación de Producto
+
+| Tipo | Ubicación | Responsabilidad | Actualización |
+|------|-----------|-----------------|---------------|
+| **Requisitos** | docs/requiments/ | Product Managers | En cada iteración |
+| **Épicas** | docs/Epics-And-Features.md | Product Managers | En cada sprint |
+| **Roadmap** | docs/Roadmap-Tasks.md | Product Managers | Mensual |
+| **User Stories** | GitHub Issues | Product Managers | En cada historia |
+
+#### Documentación Operativa
+
+| Tipo | Ubicación | Responsabilidad | Actualización |
+|------|-----------|-----------------|---------------|
+| **Procedimientos** | docs/operations/ | DevOps | En cada cambio |
+| **Runbooks** | docs/runbooks/ | DevOps | En cada incidente |
+| **Post-mortems** | docs/incidents/ | Todos | Después de cada P1/P2 |
+| **Conocimiento** | Confluence | Todos | Continuamente |
+
+### Estructura de Documentación
+
+> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT)._
+
+#### Directorio docs/
+
+```
+docs/
+├── requiments/           # Requisitos originales
+├── architecture/         # Diagramas y arquitectura
+├── operations/           # Procedimientos operativos
+├── runbooks/             # Guías de acción
+├── incidents/            # Post-mortems
+├── epics/                # Épicas detalladas
+├── features/             # Features detalladas
+└── guides/               # Guías especializadas
+    ├── TEAM_ORGANIZATION_GUIDE.md
+    ├── DEVELOPMENT_LIFECYCLE_GUIDE.md
+    ├── SECURITY_ACCESS_GUIDE.md
+    ├── DEPLOYMENT_OPERATIONS_GUIDE.md
+    ├── PACKAGES_LIBRARY_GUIDE.md
+    └── TESTING_QUALITY_GUIDE.md
+```
+
+#### Archivos Principales
+
+| Archivo | Propósito | Responsabilidad |
+|---------|-----------|-----------------|
+| `SUMMARY.md` | Vista general de toda la documentación | Arquitectos |
+| `DOCUMENTATION_GUIDE.md` | Cómo organizar y mantener la documentación | Arquitectos |
+| `Farutech-Cloud-Platform-Fundamentals.md` | Documento fundacional completo | Arquitectos |
+| `CONFIGURATION_STANDARDS.md` | Estándares y convenciones | Arquitectos |
+
+### Métricas de Documentación
+
+> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT)._
+
+| Métrica | Objetivo | Medición |
+|---------|----------|----------|
+| **Tasa de actualización** | > 95% actualizada | Análisis de commits |
+| **Tiempo medio de respuesta** | < 24 horas | Sistema de feedback |
+| **Satisfacción del equipo** | > 80% | Encuestas trimestrales |
+| **Uso de documentación** | > 90% consultada | Analytics |
+| **Calidad percibida** | > 85% útil | Feedback de usuarios |
+
+### Evolución Futura
+
+> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT)._
+
+#### Automatización Inteligente
+
+- Generación automática de documentación desde código
+- Análisis de uso para identificar documentación faltante
+- Recomendaciones de mejora basadas en feedback
+- Traducción automática para equipos globales
+
+#### Gestión Avanzada
+
+- Búsqueda semántica de documentación
+- Relaciones automáticas entre documentos
+- Alertas proactivas de documentación obsoleta
+- Integración con herramientas de desarrollo
+
 ## Referencias
 - [Knowledge Architecture](../03-architecture-and-standards/12-knowledge-architecture.md)
 - [Documentation Guide](01-documentation-guide.md)

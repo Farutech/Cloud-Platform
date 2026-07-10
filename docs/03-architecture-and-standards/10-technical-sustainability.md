@@ -194,6 +194,96 @@ El conocimiento crítico está distribuido entre el equipo, evitando puntos úni
 - Compartir éxitos técnicos
 - Promoción de excelencia técnica
 
+### Fundamental Principles
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_SUSTAINABILITY_GUIDE.md` (reconciliación SSOT)._
+
+#### 1. Sustainability as a Strategic Objective
+Technical sustainability is not a secondary feature, but a fundamental strategic objective aligned with the long-term vision of the platform.
+
+#### 2. Balance between innovation and stability
+The platform must be able to innovate rapidly without compromising its stability and reliability.
+
+#### 3. Resource efficiency
+Technical resources (computational, human, financial) must be used optimally to maximize the value delivered.
+
+#### 4. Resilience and adaptability
+The platform must be resilient to changes and adaptable to new requirements and technologies.
+
+#### 5. Transparency and measurement
+Technical sustainability must be measurable, transparent, and effectively communicated to all stakeholders.
+
+### Dimensions of Technical Sustainability
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_SUSTAINABILITY_GUIDE.md` (reconciliación SSOT)._
+
+| Dimension | Description | Key Metrics |
+|-----------|-------------|----------------|
+| **Technical** | Code and architecture quality, maintainability and evolution | Cyclomatic complexity, test coverage, defect density |
+| **Operational** | Stability, reliability and efficiency of operational processes | Availability, mean time between failures, mean time to resolution |
+| **Human** | Ability of teams to maintain and evolve the platform | Talent rotation, team satisfaction, onboarding time |
+| **Environmental** | Environmental impact of infrastructure and technical operations | Energy consumption, carbon footprint, energy efficiency |
+| **Economic** | Cost of ownership and return on investment of technical decisions | Cost per transaction, cost per user, technical ROI |
+
+### Technical Sustainability Management Process
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_SUSTAINABILITY_GUIDE.md` (reconciliación SSOT)._
+
+#### 1. Initial Assessment
+- Analysis of current technical maturity
+- Identification of sustainability gaps
+- Assessment of technical risks
+- Definition of sustainability objectives
+
+#### 2. Strategic Design
+- Selection of sustainable technologies
+- Design of resilient architecture
+- Planning of technical migrations
+- Definition of sustainability standards
+
+#### 3. Implementation
+- Gradual adoption of sustainable practices
+- Team training
+- Integration with existing workflows
+- Initial metrics monitoring
+
+#### 4. Monitoring and Reporting
+- Continuous monitoring of key metrics
+- Periodic technical health reports
+- Trend analysis and alerts
+- Communication with stakeholders
+
+#### 5. Continuous Improvement
+- Root cause analysis of sustainability issues
+- Updating strategies and practices
+- Innovation in technical practices
+- Benchmarking with best practices
+
+### Tools and Technologies
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_SUSTAINABILITY_GUIDE.md` (reconciliación SSOT)._
+
+| Tool | Use | Integration |
+|-------------|-----|-------------|
+| **SonarQube** | Code quality and technical sustainability analysis | CI/CD pipelines |
+| **Datadog** | Monitoring of technical and operational metrics | Infrastructure, applications |
+| **GitHub Advanced Security** | Security and sustainability management | GitHub repositories |
+| **Jira/Linear** | Management of sustainability initiatives | GitHub, Slack |
+| **Confluence** | Documentation of strategies and reports | Jira, GitHub |
+| **VS Code Extensions** | Local support for sustainable practices | Development environments |
+
+### Key Metrics
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_SUSTAINABILITY_GUIDE.md` (reconciliación SSOT)._
+
+| Category | Metric | Formula | Objective |
+|-----------|---------|---------|----------|
+| **Technical** | Defect density | Defects found / KLOC | < 0.5 defects/KLOC |
+| **Operational** | Availability | (Available time / Total time) × 100% | ≥ 99.9% |
+| **Economic** | Cost per transaction | Total cost / Number of transactions | Continuous optimization |
+| **Human** | Team satisfaction | Satisfaction surveys | ≥ 85% |
+| **Environmental** | Carbon footprint | Estimated emissions | Annual reduction |
+
 ## Referencias
 - [Technical Debt Management](09-technical-debt-management.md)
 - [Technical Governance](08-technical-governance.md)
