@@ -1,4 +1,4 @@
-# 03 - REQUIREMENTS PART 03: ESTÁNDARES DE INGENIERÍA Y EJECUCIÓN TÉCNICA
+# Farutech Cloud Platform - Requerimientos Parte 03: Estándares de Ingeniería
 
 > **Propósito**: Definir los estándares de ingeniería y ejecución técnica para Farutech Cloud Platform  
 > **Audiencia**: Developers, Architects, DevOps, QA Engineers  

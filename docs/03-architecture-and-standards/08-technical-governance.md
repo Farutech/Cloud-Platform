@@ -1,4 +1,4 @@
-# 08 - TECHNICAL GOVERNANCE GUIDE
+# Farutech Cloud Platform - Gobierno Técnico
 
 > **Propósito**: Establecer la estructura de gobierno técnico para Farutech Cloud Platform  
 > **Audiencia**: Arquitectos, líderes técnicos, managers  

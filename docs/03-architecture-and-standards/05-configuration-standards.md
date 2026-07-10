@@ -220,4 +220,19 @@ package-name/
 > - Configurar [herramientas de CI/CD](02-engineering-standards.md#despliegue)  
 
 ---
-*Versión del documento: 1.0.0 | Creado: 2026-07-07 | Revisión: Trimestral*
+title: "Estándares de Configuración"
+date: 2026-07-07
+owner: "infrastructure-team"
+status: "approved"
+category: "architecture-and-standards"
+tags: ["configuration", "standards", "environment", "settings"]
+related_to: 
+  - "03-architecture-and-standards/04-namespace-conventions.md"
+  - "03-architecture-and-standards/02-engineering-standards.md"
+  - "04-development-lifecycle/02-deployment-operations.md"
+  - "05-security/01-security-access.md"
+summary: "Estándares de configuración para la plataforma Farutech Cloud Platform"
+version: "1.0"
+---
+
+# Farutech Cloud Platform - Estándares de Configuración

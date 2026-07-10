@@ -1,4 +1,4 @@
-# 13 - MIGRATION GUIDE
+# Farutech Cloud Platform - Guía de Migración
 
 > **Propósito**: Guía detallada para migración de requerimientos de Farutech Cloud Platform  
 > **Audiencia**: Technical Writers, Developers, Product Managers  
@@ -192,7 +192,7 @@ Esta guía proporciona instrucciones detalladas para la migración de los archiv
 #### Formato Estándar a Aplicar
 Cada archivo migrado debe seguir el formato estándar:
 
-```markdown
+```
 # [Número] - [Nombre del Documento]
 
 > **Propósito**: [Descripción del propósito del documento]  

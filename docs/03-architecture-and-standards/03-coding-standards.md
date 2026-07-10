@@ -1,4 +1,4 @@
-# 03 - CODING STANDARDS
+# Farutech Cloud Platform - Estándares de Codificación
 
 > **Propósito**: Establecer los estándares de codificación para todos los componentes de Farutech Cloud Platform  
 > **Audiencia**: Desarrolladores backend, frontend y workers  

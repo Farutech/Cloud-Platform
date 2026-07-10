@@ -1,4 +1,4 @@
-# Farutech Cloud Platform - Engineering Development Standards & Best Practices Handbook
+# Farutech Cloud Platform - Estándares de Ingeniería
 
 ## 1. Introducción
 

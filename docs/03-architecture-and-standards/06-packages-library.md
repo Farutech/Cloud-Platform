@@ -1,10 +1,26 @@
-# 06 - PACKAGES LIBRARY GUIDE
+---
+title: "Biblioteca de Paquetes"
+date: 2026-07-07
+owner: "dependency-management-team"
+status: "approved"
+category: "architecture-and-standards"
+tags: ["packages", "library", "dependencies", "components"]
+related_to: 
+  - "03-architecture-and-standards/05-configuration-standards.md"
+  - "03-architecture-and-standards/02-engineering-standards.md"
+  - "05-security/02-dependencies-security.md"
+  - "11-templates/08-code-structure-template.md"
+summary: "Biblioteca de paquetes y componentes para la plataforma Farutech Cloud Platform"
+version: "1.0"
+---
+
+# Farutech Cloud Platform - Biblioteca de Paquetes
 
 > **Propósito**: Establecer la estrategia de bibliotecas y paquetes reutilizables para Farutech Cloud Platform  
 > **Audiencia**: Arquitectos, desarrolladores backend/frontend, DevOps  
-> **Propietario**: Lead Architect  
+> **Propietario**: dependency-management-team  
 > **Última Revisión**: 2026-07-07  
-> **Estado**: Actual
+> **Estado**: approved
 
 ## Resumen
 

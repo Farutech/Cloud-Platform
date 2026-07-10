@@ -1,4 +1,8 @@
-# 00 - REQUIREMENTS SUMMARY
+# Farutech Cloud Platform - Resumen de Requerimientos
+
+## Visión General
+
+El propósito de este documento es presentar un resumen integral de los requerimientos para la plataforma Farutech Cloud Platform. Este resumen proporciona una visión de conjunto de las partes más importantes del sistema, sus componentes, funcionalidades y objetivos estratégicos.
 
 > **Propósito**: Resumen del directorio de requerimientos para Farutech Cloud Platform  
 > **Audiencia**: Product Managers, Architects, Developers, Stakeholders  

@@ -1,4 +1,4 @@
-# 08 - REQUIREMENTS PART 08: MODELO DE OPERACIÓN DE LA PLATAFORMA
+# Farutech Cloud Platform - Requerimientos Parte 08: Modelo de Operación
 
 > **Propósito**: Definir el modelo de operación de Farutech Cloud Platform  
 > **Audiencia**: Operations Engineers, DevOps, Platform Engineers, Product Managers  
@@ -85,7 +85,7 @@ La seguridad está integrada en todos los procesos operativos, desde la provisi�
 - **Recursos Compartidos**: Infraestructura compartida entre múltiples organizaciones
 - **Aislamiento Lógico**: Separación de datos y funcionalidades
 - **Costos Reducidos**: Economía de escala para clientes pequeños
-- **Gestión Centralizada**: Administración统一ada de recursos
+- **Gestión Centralizada**: Administración unifyada de recursos
 - **Escalabilidad Compartida**: Recursos disponibles según demanda
 
 ##### Implementación Técnica

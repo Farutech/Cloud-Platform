@@ -1,4 +1,4 @@
-# 04 - REQUIREMENTS PART 04: MODELO OPERATIVO DE INGENIERÍA
+# Farutech Cloud Platform - Requerimientos Parte 04: Modelo Operativo
 
 > **Propósito**: Definir el modelo operativo de ingeniería para Farutech Cloud Platform  
 > **Audiencia**: Engineering Managers, Tech Leads, Developers, DevOps  

@@ -1,4 +1,4 @@
-# 07 - VERSIONING AND RELEASES GUIDE
+# Farutech Cloud Platform - Versionado y Releases
 
 > **Propósito**: Establecer la estrategia de versionado y lanzamientos para Farutech Cloud Platform  
 > **Audiencia**: Desarrolladores, DevOps, líderes de producto  

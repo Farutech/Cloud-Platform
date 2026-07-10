@@ -1,4 +1,4 @@
-# 14 - MIGRATION CHECKLIST
+# Farutech Cloud Platform - Checklist de Migración
 
 > **Propósito**: Checklist para migración de requerimientos de Farutech Cloud Platform  
 > **Audiencia**: Technical Writers, Developers, Product Managers  
@@ -267,4 +267,17 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 > - Validar [calidad de la migración](#confirmación-de-calidad)  
 
 ---
-*Versión del documento: 1.0.0 | Creado: 2026-07-07 | Revisión: Trimestral*
+title: "Checklist de Migración"
+date: 2026-07-07
+owner: "migration-team"
+status: "approved"
+category: "requirements"
+tags: ["migration", "checklist", "validation", "tasks"]
+related_to: 
+  - "10-requirements/13-migration-guide.md"
+  - "10-requirements/12-migration-plan.md"
+  - "04-development-lifecycle/01-development-lifecycle.md"
+  - "04-development-lifecycle/02-deployment-operations.md"
+summary: "Checklist de verificación para la migración de la plataforma Farutech Cloud Platform"
+version: "1.0"
+---

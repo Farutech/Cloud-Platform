@@ -1,4 +1,4 @@
-# 02 - REQUIREMENTS PART 02: ORGANIZACIÓN TÉCNICA Y MODELO DE DESARROLLO
+# Farutech Cloud Platform - Requerimientos Parte 02: Organización Técnica
 
 > **Propósito**: Definir la organización técnica y modelo de desarrollo para Farutech Cloud Platform  
 > **Audiencia**: Engineering Managers, Tech Leads, Developers, DevOps  

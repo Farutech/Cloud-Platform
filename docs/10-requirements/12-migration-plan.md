@@ -1,4 +1,4 @@
-# 12 - MIGRATION PLAN
+# Farutech Cloud Platform - Plan de Migración
 
 > **Propósito**: Plan de acción para migración de requerimientos de Farutech Cloud Platform  
 > **Audiencia**: Product Managers, Architects, Technical Writers, Developers  

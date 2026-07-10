@@ -1,4 +1,4 @@
-# 09 - TECHNICAL DEBT MANAGEMENT GUIDE
+# Farutech Cloud Platform - Gestión de Deuda Técnica
 
 > **Propósito**: Establecer la estrategia de gestión de deuda técnica para Farutech Cloud Platform  
 > **Audiencia**: Arquitectos, desarrolladores, managers, PMOs  

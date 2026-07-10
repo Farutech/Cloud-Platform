@@ -1,4 +1,4 @@
-# 09 - REQUIREMENTS PART 09: KIT FUNDACIONAL DE EJECUCIÓN
+# Farutech Cloud Platform - Requerimientos Parte 09: Kit Fundacional
 
 > **Propósito**: Definir el kit fundacional de ejecución para Farutech Cloud Platform  
 > **Audiencia**: Engineering Managers, Tech Leads, Developers, DevOps  

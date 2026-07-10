@@ -29,7 +29,7 @@ User → Orchestrator Agent → Specialist Agents
                   [Security Agent]
                   [Documentation Agent]
 ```
-
+$$
 ### Agentes Especializados
 
 | Agente | Responsabilidad | Tecnologías |

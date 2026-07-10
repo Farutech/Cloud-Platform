@@ -1,4 +1,4 @@
-# 06 - REQUIREMENTS PART 06: ARQUITECTURA DEL CONOCIMIENTO Y GOBIERNO DOCUMENTAL
+# Farutech Cloud Platform - Requerimientos Parte 06: Arquitectura del Conocimiento
 
 > **Propósito**: Definir la arquitectura del conocimiento y gobierno documental para Farutech Cloud Platform  
 > **Audiencia**: Technical Writers, Knowledge Managers, Architects, Developers  
@@ -158,7 +158,7 @@ Cada documento debe incluir metadatos que faciliten la gestión y búsqueda:
 - **index.md** requerido en todos los directorios
 
 #### Estructura de Documentos
-```markdown
+````
 # [Título del Documento]
 
 > **Propósito**: Una-sentencia-descripción-del-propósito-del-documento  

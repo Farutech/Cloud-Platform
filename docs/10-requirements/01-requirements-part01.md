@@ -1,4 +1,4 @@
-# 01 - REQUIREMENTS PART 01: VISIÓN, MODELO DE PLATAFORMA Y ARQUITECTURA CONCEPTUAL
+# Farutech Cloud Platform - Requerimientos Parte 01: Visión y Arquitectura
 
 > **Propósito**: Definir la visión, modelo de plataforma y arquitectura conceptual de Farutech Cloud Platform  
 > **Audiencia**: Executives, Product Managers, Architects, Stakeholders  

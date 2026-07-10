@@ -1,12 +1,22 @@
-# 04 - NAMESPACE CONVENTIONS
+---
+title: "Convenciones de Namespace"
+date: 2026-07-07
+owner: "architecture-team"
+status: "approved"
+category: "architecture-and-standards"
+tags: ["namespace", "conventions", "organization", "structure"]
+related_to: 
+  - "03-architecture-and-standards/03-coding-standards.md"
+  - "03-architecture-and-standards/02-engineering-standards.md"
+  - "03-architecture-and-standards/06-packages-library.md"
+  - "11-templates/08-code-structure-template.md"
+summary: "Convenciones de namespace para la plataforma Farutech Cloud Platform"
+version: "1.0"
+---
 
-> **Propósito**: Establecer las convenciones de namespaces para la arquitectura de monolito modular de Farutech Cloud Platform  
-> **Audiencia**: Arquitectos, desarrolladores backend  
-> **Propietario**: Lead Architect  
-> **Última Revisión**: 2026-07-07  
-> **Estado**: Actual
+# Farutech Cloud Platform - Convenciones de Namespace
 
-## Resumen
+## Propósito
 
 Este documento establece las convenciones de namespaces para mantener la separación lógica de responsabilidades en la arquitectura de monolito modular de Farutech Cloud Platform, alineada con los principios de Clean Architecture.
 
