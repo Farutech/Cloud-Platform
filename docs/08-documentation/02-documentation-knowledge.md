@@ -252,54 +252,53 @@ La organización debe aprender de la gestión del conocimiento:
 
 #### Documentación de Producto
 
-| Tipo | Ubicación | Responsabilidad | Actualización |
+| Tipo | Ubicación (SSOT) | Responsabilidad | Actualización |
 |------|-----------|-----------------|---------------|
-| **Requisitos** | docs/requiments/ | Product Managers | En cada iteración |
-| **Épicas** | docs/Epics-And-Features.md | Product Managers | En cada sprint |
-| **Roadmap** | docs/Roadmap-Tasks.md | Product Managers | Mensual |
-| **User Stories** | GitHub Issues | Product Managers | En cada historia |
+| **Requisitos** | `docs/10-requirements/` (`00-requirements-summary.md`) | Product Managers | En cada iteración |
+| **Épicas** | `docs/02-product-management/01-epics-and-features.md` | Product Managers | En cada sprint |
+| **Roadmap** | `docs/02-product-management/02-roadmap-tasks.md` | Product Managers | Mensual |
+| **User Stories** | `docs/02-product-management/05-user-stories.md` | Product Managers | En cada historia |
 
 #### Documentación Operativa
 
-| Tipo | Ubicación | Responsabilidad | Actualización |
+| Tipo | Ubicación (SSOT) | Responsabilidad | Actualización |
 |------|-----------|-----------------|---------------|
-| **Procedimientos** | docs/operations/ | DevOps | En cada cambio |
-| **Runbooks** | docs/runbooks/ | DevOps | En cada incidente |
-| **Post-mortems** | docs/incidents/ | Todos | Después de cada P1/P2 |
-| **Conocimiento** | Confluence | Todos | Continuamente |
+| **Procedimientos** | `docs/04-development-lifecycle/02-deployment-operations.md` | DevOps | En cada cambio |
+| **Runbooks** | `docs/04-development-lifecycle/05-incident-management.md` | DevOps | En cada incidente |
+| **Post-mortems** | `docs/04-development-lifecycle/05-incident-management.md` | Todos | Después de cada P1/P2 |
+| **Conocimiento** | `docs/07-knowledge-and-innovation/` | Todos | Continuamente |
 
 ### Estructura de Documentación
 
-> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT)._
+> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT). Estructura vigente (numerada)._
 
-#### Directorio docs/
+#### Directorio docs/ (estructura vigente)
 
 ```
 docs/
-├── requiments/           # Requisitos originales
-├── architecture/         # Diagramas y arquitectura
-├── operations/           # Procedimientos operativos
-├── runbooks/             # Guías de acción
-├── incidents/            # Post-mortems
-├── epics/                # Épicas detalladas
-├── features/             # Features detalladas
-└── guides/               # Guías especializadas
-    ├── TEAM_ORGANIZATION_GUIDE.md
-    ├── DEVELOPMENT_LIFECYCLE_GUIDE.md
-    ├── SECURITY_ACCESS_GUIDE.md
-    ├── DEPLOYMENT_OPERATIONS_GUIDE.md
-    ├── PACKAGES_LIBRARY_GUIDE.md
-    └── TESTING_QUALITY_GUIDE.md
+├── 00-meta/                      # Decisiones ejecutivas y gobernanza
+├── 01-vision-and-fundamentals/   # Visión y arquitectura fundacional
+├── 02-product-management/        # PRD, épicas, roadmap, user stories
+├── 03-architecture-and-standards/ # ADRs y estándares (engineering, coding, config)
+├── 04-development-lifecycle/      # QA, despliegue, monitor, incidentes
+├── 05-security/                   # IAM y seguridad de dependencias
+├── 06-developer-experience/       # DX
+├── 07-knowledge-and-innovation/   # Gestión y arquitectura del conocimiento
+├── 08-documentation/              # Guías de documentación
+├── 09-ai-agents/                  # Agentes de IA y prompts
+├── 10-requirements/               # Requerimientos por dominio
+├── 11-templates/                  # Plantillas (ADR, épica, historia, etc.)
+└── _archive/                      # Red de seguridad de rollback (legacy roots + meta-churn)
 ```
 
 #### Archivos Principales
 
 | Archivo | Propósito | Responsabilidad |
 |---------|-----------|-----------------|
-| `SUMMARY.md` | Vista general de toda la documentación | Arquitectos |
-| `DOCUMENTATION_GUIDE.md` | Cómo organizar y mantener la documentación | Arquitectos |
-| `Farutech-Cloud-Platform-Fundamentals.md` | Documento fundacional completo | Arquitectos |
-| `CONFIGURATION_STANDARDS.md` | Estándares y convenciones | Arquitectos |
+| `01-vision-and-fundamentals/04-index.md` | Índice maestro SSOT de toda la documentación | Arquitectos |
+| `08-documentation/01-documentation-guide.md` | Cómo organizar y mantener la documentación | Arquitectos |
+| `01-vision-and-fundamentals/02-platform-architecture.md` | Documento fundacional de arquitectura | Arquitectos |
+| `03-architecture-and-standards/05-configuration-standards.md` | Estándares y convenciones | Arquitectos |
 
 ### Métricas de Documentación
 

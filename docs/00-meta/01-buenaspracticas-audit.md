@@ -5,7 +5,7 @@
 
 ## Hallazgo
 
-La carpeta auditada (`G:\Mi unidad\Projects\Farutech\BuenasPracticas`) **NO contiene hoy ningún estándar técnico gobernado**. Es un depositario personal de capturas y referencias. Conteo exacto (563 archivos):
+La carpeta auditada (original en Google Drive: `BuenasPracticas`; preservada en `docs/_archive/meta-churn/BuenasPracticas`) **NO contiene hoy ningún estándar técnico gobernado**. Es un depositario personal de capturas y referencias. Conteo exacto (563 archivos):
 
 | Tipo | Cantidad | Contenido |
 |---|---|---|

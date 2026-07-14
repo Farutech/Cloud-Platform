@@ -54,7 +54,7 @@ La documentación del sistema seguirá estos principios inmutables:
 - Reference project documentation incorrectly placed in product workspace
 
 **Inconsistencies:**
-- ADR-001 references "2026-07-02" date (future date)
+- ADR-001: el diagnóstico original citaba la fecha "2026-07-02", pero el ADR canónico (`001-modular-monolith.md`) no contiene esa fecha (corregido en la reconciliación SSOT).
 - PROMPT_MASTER_GUIDE references missing Architecture-Decision-Records.md
 - CONFIGURATION_STANDARDS.md duplicates content in Engineering Handbook
 - finanzas_personales documentation appears in product workspace but isn't part of platform
@@ -207,9 +207,9 @@ RAÍZ: docs/index.md (El Mapa de Conocimiento)
 
 | Existing Document | Action | New Location | Justification |
 |-------------------|--------|--------------|---------------|
-| [README.md](file://d:\repo\Farutech\finanzas_personales\docs\README.md) | Transform | `foundation/vision.md` | Contains strategic vision better placed in foundation |
-| [CONFIGURATION_STANDARDS.md](file://d:\repo\Farutech\CONFIGURATION_STANDARDS.md) | Merge | `engineering/standards/coding.md` | Overlaps significantly with Engineering Handbook |
-| [PROMPT_MASTER_GUIDE.md](file://d:\repo\Farutech\PROMPT_MASTER_GUIDE.md) | Refactor | `ai/prompt-engineering.md` | Content is AI-specific, not general documentation |
+| `finanzas_personales/docs/README.md` (legacy) | Transform | `foundation/vision.md` | Contains strategic vision better placed in foundation |
+| `CONFIGURATION_STANDARDS.md` (legacy, raíz) | Merge | `engineering/standards/coding.md` | Overlaps significantly with Engineering Handbook |
+| `PROMPT_MASTER_GUIDE.md` (legacy, raíz) | Refactor | `ai/prompt-engineering.md` | Content is AI-specific, not general documentation |
 | `docs/Engineering Development Standards & Best Practices Handbook.md` | Split | `engineering/standards/*.md` | Too monolithic; needs separation by concern |
 | `docs/Architecture-Decision-Records.md` | Version | `architecture/decisions/*.md` | Each ADR becomes separate versioned document |
 | `finanzas_personales/docs/*` | Archive | `historical/reference-projects/` | Reference project not part of platform documentation |

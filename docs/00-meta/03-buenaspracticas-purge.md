@@ -9,7 +9,7 @@
 
 ## Acción Ejecutada
 - **Moves**:  
-  - `G:\Mi unidad\Projects\Farutech\BuenasPracticas` → `docs/_archive/meta-churn/BuenasPracticas`  
+  - `BuenasPracticas` (carpeta personal, original en Google Drive) → `docs/_archive/meta-churn/BuenasPracticas` 
   - Commit: `9e7bfa1 Purge BuenasPracticas as personal noise (A.12)`  
 
 > **Nota de Rollback**:  

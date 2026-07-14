@@ -40,7 +40,7 @@ Ser la plataforma líder que permite a miles de organizaciones acceder a solucio
 - Arquitectura evolutiva y mantenible
 
 ## Referencias
-- [Platform Fundamentals](02-platform-architecture.md)
+- [Platform Fundamentals (índice SSOT)](04-index.md)
 - [Platform Architecture](02-platform-architecture.md)
 
 > **Próximos Pasos**:  

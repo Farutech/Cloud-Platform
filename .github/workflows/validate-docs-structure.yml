@@ -22,17 +22,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Set up environment
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl
-
       - name: Run document structure validation
         run: |
           chmod +x docs/validate_structure.sh
