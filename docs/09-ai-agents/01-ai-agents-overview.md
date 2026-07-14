@@ -76,6 +76,10 @@ La plataforma implementa un modelo de agentes organizados en torno a un Orquesta
 - **Security Testing**: Análisis de vulnerabilidades
 - **Compliance**: Normativas, estándares
 
+> _Fusionado desde `docs/_archive/legacy-roots/AI_AGENTS_PROMPTS_GUIDE.md` (reconciliación SSOT)._
+
+**Herramientas de Seguridad**: SonarQube, OWASP Top 10, NIST
+
 #### Agentes de Calidad
 **Responsabilidad**: Asistencia en pruebas, calidad, validación.
 
@@ -93,6 +97,99 @@ La plataforma implementa un modelo de agentes organizados en torno a un Orquesta
 - **DDD**: Domain Driven Design, bounded contexts
 - **Microservices**: Diseño, comunicación, orquestación
 - **Database Design**: Modelado, optimización, seguridad
+
+> _Fusionado desde `docs/_archive/legacy-roots/IA-Agents.md` (reconciliación SSOT)._
+
+#### Agente de Arquitectura Empresarial
+
+**Rol**: Experto en arquitectura empresarial, diseño de sistemas y modelado de dominios.
+
+**Responsabilidades**:
+- Diseñar arquitectura de sistemas
+- Modelar dominios de negocio
+- Definir límites de contexto (Bounded Contexts)
+- Asegurar coherencia arquitectónica
+- Evaluar patrones de diseño
+
+**Especialidad**: Arquitectura empresarial, DDD, Clean Architecture, Hexagonal Architecture
+
+#### Agente de Ingeniería de Software
+
+**Rol**: Experto en buenas prácticas de desarrollo y calidad de código.
+
+**Responsabilidades**:
+- Aplicar principios SOLID, DRY, KISS, YAGNI
+- Asegurar mantenibilidad y bajo acoplamiento
+- Promover alta cohesión y reutilización
+- Evaluar extensibilidad y escalabilidad
+- Verificar observabilidad y seguridad
+
+**Especialidad**: Buenas prácticas de desarrollo, Clean Code, principios de diseño
+
+#### Agente de Arquitectura Cloud
+
+**Rol**: Experto en infraestructura cloud y orquestación de sistemas distribuidos.
+
+**Responsabilidades**:
+- Diseñar soluciones cloud-native
+- Configurar contenedores y orquestación
+- Definir estrategias de despliegue
+- Asegurar observabilidad y monitorización
+- Gestionar CI/CD y GitOps
+
+**Especialidad**: Azure, Docker, Kubernetes, PostgreSQL, Redis, RabbitMQ, OpenTelemetry
+
+#### Agente de Product Management
+
+**Rol**: Experto en gestión de producto y trazabilidad de requerimientos.
+
+**Responsabilidades**:
+- Asegurar alineación entre visión y desarrollo
+- Mantener trazabilidad entre épicas y funcionalidades
+- Validar que los desarrollos cumplan con los objetivos
+- Facilitar la comunicación entre equipos técnicos y de negocio
+- Documentar decisiones de producto
+
+**Especialidad**: Product Management, trazabilidad, alineación de objetivos
+
+#### Agente de Documentación
+
+**Rol**: Experto en documentación técnica y creación de contenido profesional.
+
+**Responsabilidades**:
+- Crear documentación clara y precisa
+- Asegurar consistencia y ausencia de redundancias
+- Facilitar navegación y mantenimiento
+- Crear contenido escalable y organizado
+- Relacionar documentos con otros elementos
+
+**Especialidad**: Technical Writing, documentación arquitectónica, contenido profesional
+
+#### Agente de Organización de Ingeniería
+
+**Rol**: Experto en modelos de organización de equipos de desarrollo.
+
+**Responsabilidades**:
+- Diseñar estructura de equipos y responsabilidades
+- Aplicar principios de Team Topologies y otras metodologías
+- Asegurar autonomía y colaboración entre equipos
+- Diseñar APIs de equipo y límites de responsabilidad
+- Optimizar flujos de trabajo y comunicación
+
+**Especialidad**: Team Topologies, SAFe, Scrum@Scale, Spotify Model, Disciplined Agile
+
+#### Agente de Inteligencia Artificial Aplicada
+
+**Rol**: Experto en desarrollo y orquestación de agentes de IA.
+
+**Responsabilidades**:
+- Diseñar agentes especializados
+- Implementar orquestación de IA
+- Aplicar técnicas de Context Engineering y Prompt Engineering
+- Gestionar especificaciones driven development (SDD)
+- Asegurar gobernanza de IA
+
+**Especialidad**: AI Orchestration, Context Engineering, SDD, AI Governance
 
 ### Flujos de Trabajo
 
@@ -112,6 +209,29 @@ La plataforma implementa un modelo de agentes organizados en torno a un Orquesta
 - **Resolución de problemas**: Debugging, troubleshooting
 - **Optimización**: Rendimiento, seguridad, calidad
 - **Documentación**: Creación, actualización, revisión
+
+#### Ejemplo de Flujo: Crear una Nueva Aplicación de POS
+
+> _Fusionado desde `docs/_archive/legacy-roots/IA-Agents.md` (reconciliación SSOT)._
+
+**Tarea**: "Crear una nueva aplicación de POS para el marketplace"
+
+**Flujo**:
+1. Orquestador → Analiza: "Se requiere crear una aplicación completa"
+2. Orquestador → Involucra: Agente de Arquitectura Empresarial
+3. Arquitectura → Diseña: Estructura de la aplicación POS
+4. Orquestador → Involucra: Agente de Backend .NET
+5. Backend → Implementa: API de POS con .NET 10
+6. Orquestador → Involucra: Agente de Frontend React
+7. Frontend → Implementa: Interfaz de POS con React/TypeScript
+8. Orquestador → Involucra: Agente de Workers Go
+9. Workers → Implementa: Procesamiento de pagos asíncrono
+10. Orquestador → Involucra: Agente de QA
+11. QA → Crea: Pruebas unitarias, de integración y E2E
+12. Orquestador → Involucra: Agente de Documentación
+13. Documentación → Crea: Documentación técnica y de usuario
+14. Orquestador → Valida: Todo el resultado
+15. Orquestador → Entrega: Aplicación POS completa y funcional
 
 ### Integración con Procesos Humanos
 
@@ -197,6 +317,28 @@ Toda salida de los agentes debe pasar por validación humana:
 - **Utilidad**: Valor práctico de las sugerencias
 - **Seguridad**: Ausencia de vulnerabilidades
 - **Consistencia**: Alineación con estándares
+
+### Evolución Futura
+
+> _Fusionado desde `docs/_archive/legacy-roots/AI_AGENTS_PROMPTS_GUIDE.md` (reconciliación SSOT)._
+
+#### Agentes Autónomos
+
+- Capacidad para ejecutar tareas completas sin intervención humana
+- Integración con sistemas de monitoreo para corrección automática
+- Aprendizaje continuo basado en feedback
+
+#### Gestión Inteligente
+
+- Selección automática de agentes según complejidad de la tarea
+- Optimización de recursos computacionales
+- Priorización dinámica de tareas
+
+#### Integración Avanzada
+
+- Con herramientas de desarrollo (VS Code extensions)
+- Con sistemas de gestión de proyectos (Jira, Linear)
+- Con repositorios de código (GitHub, GitLab)
 
 ## Referencias
 - [AI Agents Prompts](02-ai-agents-prompts.md)

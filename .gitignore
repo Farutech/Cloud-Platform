@@ -1,0 +1,7 @@
+# Generated validation reports (produced by docs/validate_structure.sh)
+docs/validation_report_*.log
+validation_report_*.log
+
+# OS / editor noise
+.DS_Store
+*.swp

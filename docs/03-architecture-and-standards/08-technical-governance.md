@@ -189,6 +189,141 @@ Registro formal de decisiones arquitectónicas:
 - Pilotos técnicos
 - Integración de aprendizajes
 
+### Fundamental Principles
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_GOVERNANCE_GUIDE.md` (reconciliación SSOT)._
+
+#### 1. Governance as service, not control
+Technical governance should facilitate and enable teams, not restrict their capacity for innovation and action.
+
+#### 2. Strategic alignment
+Each technical decision should be clearly linked to business strategic objectives and platform goals.
+
+#### 3. Transparency and visibility
+Governance processes should be transparent, with decisions documented and accessible to all stakeholders.
+
+#### 4. Shared ownership
+Technical governance is the responsibility of all technical levels, from developers to architects and technical leaders.
+
+#### 5. Continuous evolution
+Technical governance should evolve along with the platform, adapting to new challenges and opportunities.
+
+### Technical Governance Structure
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_GOVERNANCE_GUIDE.md` (reconciliación SSOT)._
+
+#### 1. Executive Technical Committee
+- **Composition:** CTO, Chief Architects, Technical Team Leaders
+- **Responsibilities:** Technical strategy, high-impact decisions, technical resource allocation
+- **Frequency:** Monthly
+
+#### 2. Architecture Council
+- **Composition:** Senior Architects, Team Representatives
+- **Responsibilities:** Architectural decisions, technical standards, ADR review
+- **Frequency:** Weekly
+
+#### 3. Technical Practice Groups
+- **Composition:** Experts in specific areas (Frontend, Backend, Security, etc.)
+- **Responsibilities:** Specific standards, training, technical support, best practices
+- **Frequency:** Biweekly
+
+#### 4. Development Teams
+- **Composition:** All team members
+- **Responsibilities:** Implementation of decisions, standards monitoring, feedback
+- **Frequency:** Daily/Continuous
+
+### Propietarios Técnicos
+
+> _Fusionado desde `docs/_archive/legacy-roots/TechnicalGovernanceGuide.md` (reconciliación SSOT)._
+
+- Individuos responsables de áreas técnicas específicas
+- Ejemplos: Propietario de Infraestructura, Propietario de Seguridad
+- Responsabilidades: Cumplimiento de estándares, reportes de salud técnica, mejora continua
+
+### Technical Governance Processes
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_GOVERNANCE_GUIDE.md` (reconciliación SSOT)._
+
+#### 1. Technical Decision Making
+- Identification of decision needs
+- Analysis of options and impact assessment
+- Consultation with relevant stakeholders
+- Decision documentation (ADR)
+- Communication and dissemination
+- Implementation monitoring
+
+#### 2. Standards Review
+- Periodic evaluation of existing standards
+- Identification of needs for new standards
+- Technical and practical validation
+- Update and communication
+- Training and support
+
+#### 3. Technology Evaluation
+- Identification of technological needs
+- Technical and commercial evaluation
+- Proof of concepts
+- Risk and dependency assessment
+- Recommendation and approval
+- Adoption and support
+
+#### 4. Compliance Monitoring
+- Measurement of standard compliance
+- Identification of deviations
+- Root cause analysis
+- Correction plans
+- Status reports
+
+#### 5. Technical Risk Management
+- Identification of technical risks
+- Assessment of probability and impact
+- Prioritization and mitigation planning
+- Implementation of controls
+- Continuous monitoring
+
+### Auditoría Técnica
+
+> _Fusionado desde `docs/_archive/legacy-roots/TechnicalGovernanceGuide.md` (reconciliación SSOT)._
+
+- Evaluación periódica de cumplimiento
+- Análisis de salud técnica
+- Identificación de gaps y riesgos
+- Reportes y recomendaciones
+- Seguimiento de acciones correctivas
+
+### Key Metrics
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_GOVERNANCE_GUIDE.md` (reconciliación SSOT)._
+
+| Category | Metric | Formula | Target |
+|---------|--------|---------|--------|
+| **Decisions** | Average decision time | Σ(Decision time) / Number of decisions | < 7 days |
+| **Standards** | Compliance rate | (Compliant elements / Total elements) × 100% | ≥ 95% |
+| **Technology** | Adoption success | (Successfully adopted technologies / Total evaluated) × 100% | ≥ 80% |
+| **Risks** | Risks mitigated | (Risks mitigated / Total identified risks) × 100% | ≥ 90% |
+| **Governance** | Governance satisfaction | Satisfaction surveys | ≥ 85% |
+
+### QA and Operations Roles
+
+> _Fusionado desde `docs/_archive/legacy-roots/TECHNICAL_GOVERNANCE_GUIDE.md` (reconciliación SSOT)._
+
+| Role | Responsibility |
+|-----|----------------|
+| **QA** | Technical quality evaluation, decision validation |
+| **Operations** | Operational impact assessment, implementation support |
+
+### Métricas Clave (Gobernanza)
+
+> _Fusionado desde `docs/_archive/legacy-roots/TechnicalGovernanceGuide.md` (reconciliación SSOT)._
+
+| Categoría | Métrica | Fórmula | Objetivo |
+|-----------|---------|---------|----------|
+| **Cumplimiento** | Adherencia a estándares | (Áreas cumpliendo / Total áreas) × 100% | ≥ 95% |
+| **Eficiencia** | Tiempo de aprobación | Tiempo promedio desde solicitud hasta aprobación | < 5 días |
+| **Calidad** | Calidad de decisiones | Evaluación de impacto y riesgos | ≥ 4.5/5 |
+| **Innovación** | Adopción de nuevas tecnologías | Número de tecnologías adoptadas | Optimización continua |
+| **Satisfacción** | Satisfacción de equipos | Encuestas de satisfacción | ≥ 85% |
+
 ## Referencias
 - [Architecture Decision Records](01-architecture-decision-records/)
 - [Engineering Standards](02-engineering-standards.md)

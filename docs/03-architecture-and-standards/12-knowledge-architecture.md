@@ -31,6 +31,41 @@ La documentación del sistema seguirá estos principios inmutables:
 - **Conciencia de Audiencia**: Contenido adaptado a lectores específicos
 - **Conocimiento Versionado**: Contexto histórico preservado manteniendo la verdad actual
 
+### Diagnóstico
+
+> _Fusionado desde `docs/_archive/legacy-roots/KNOWLEDGE_ARCHITECTURE.md` (reconciliación SSOT)._
+
+#### Current State Analysis
+
+**Strengths:**
+- Solid foundation of Architecture Decision Records (ADRs)
+- Comprehensive Engineering Development Standards Handbook
+- Well-structured reference project (finanzas_personales) demonstrating documentation practices
+- Clear configuration standards and prompt engineering guidelines
+- Existing taxonomy visible in PROMPT_MASTER_GUIDE.md categories
+
+**Weaknesses:**
+- Documentation scattered across root, /docs, and project-specific directories
+- Inconsistent file naming conventions (kebab-case vs. spaces vs. camelCase)
+- Critical documents referenced but missing (Architecture-Decision-Records.md exists but referenced as .md in PROMPT_MASTER_GUIDE)
+- Overlapping content between CONFIGURATION_STANDARDS.md and Engineering Handbook
+- No clear reading sequence for new team members
+- Mixed maturity levels (some documents complete, others marked "Planned")
+- Reference project documentation incorrectly placed in product workspace
+
+**Inconsistencies:**
+- ADR-001: el diagnóstico original citaba la fecha "2026-07-02", pero el ADR canónico (`001-modular-monolith.md`) no contiene esa fecha (corregido en la reconciliación SSOT).
+- PROMPT_MASTER_GUIDE references missing Architecture-Decision-Records.md
+- CONFIGURATION_STANDARDS.md duplicates content in Engineering Handbook
+- finanzas_personales documentation appears in product workspace but isn't part of platform
+
+**Opportunities:**
+- Consolidate overlapping standards documentation
+- Establish clear ownership model for each knowledge domain
+- Implement versioning for critical architectural decisions
+- Create explicit dependency mapping between documents
+- Standardize template structure across all documentation types
+
 ### Arquitectura Documental Propuesta
 
 ```
@@ -165,6 +200,27 @@ RAÍZ: docs/index.md (El Mapa de Conocimiento)
 | [prompt-engineering.md](ai/prompt-engineering.md) | Guía para desarrollo asistido por IA | Desarrolladores | AI Lead | Actual | AI | Media | coding.md | ai-validation.md |
 
 *(Matriz completa incluiría los 37 documentos mapeados a la nueva estructura)*
+
+### Plan de migración
+
+> _Fusionado desde `docs/_archive/legacy-roots/KNOWLEDGE_ARCHITECTURE.md` (reconciliación SSOT)._
+
+| Existing Document | Action | New Location | Justification |
+|-------------------|--------|--------------|---------------|
+| `finanzas_personales/docs/README.md` (legacy) | Transform | `foundation/vision.md` | Contains strategic vision better placed in foundation |
+| `CONFIGURATION_STANDARDS.md` (legacy, raíz) | Merge | `engineering/standards/coding.md` | Overlaps significantly with Engineering Handbook |
+| `PROMPT_MASTER_GUIDE.md` (legacy, raíz) | Refactor | `ai/prompt-engineering.md` | Content is AI-specific, not general documentation |
+| `docs/Engineering Development Standards & Best Practices Handbook.md` | Split | `engineering/standards/*.md` | Too monolithic; needs separation by concern |
+| `docs/Architecture-Decision-Records.md` | Version | `architecture/decisions/*.md` | Each ADR becomes separate versioned document |
+| `finanzas_personales/docs/*` | Archive | `historical/reference-projects/` | Reference project not part of platform documentation |
+| `docs/SUMMARY.md` | Enhance | `docs/index.md` | Becomes the central knowledge map |
+
+**Migration Rules:**
+- All documents retain original creation/modification dates
+- Historical versions preserved in `evolution/` directories
+- Redirects implemented for 6 months after migration
+- Ownership metadata added to all migrated documents
+- Broken references systematically fixed during migration
 
 ### Convenciones
 

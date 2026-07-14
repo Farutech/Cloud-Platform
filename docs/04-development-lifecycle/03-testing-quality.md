@@ -252,12 +252,75 @@ Toda funcionalidad debe contar con pruebas automatizadas adecuadas. Las pruebas 
 - Mentoring en pruebas
 - Conferencias y eventos
 
+### Coverage Targets
+
+> _Fusionado desde `docs/_archive/legacy-roots/TESTING_QUALITY_GUIDE.md` (reconciliación SSOT)._
+
+| Type | Target | Measurement |
+|------|--------|-------------|
+| **Unit** | > 80% | Istanbul, Coverlet |
+| **Integration** | > 60% | Custom metrics |
+| **E2E** | > 40% | Custom metrics |
+| **Security** | 100% | SAST/DAST reports |
+
+### Justified Exclusions
+
+> _Fusionado desde `docs/_archive/legacy-roots/TESTING_QUALITY_GUIDE.md` (reconciliación SSOT)._
+
+- Automatically generated code
+- Third-party code
+- Identified dead code
+- Edge cases with no functional impact
+
+### Quality Metrics
+
+> _Fusionado desde `docs/_archive/legacy-roots/TESTING_QUALITY_GUIDE.md` (reconciliación SSOT)._
+
+| Metric | Target | Frequency |
+|--------|--------|----------|
+| **Failure Rate** | < 0.5% | Per build |
+| **Execution Time** | < 10 min | Per pipeline |
+| **Unit Coverage** | > 80% | Per PR |
+| **Critical Vulnerabilities** | 0 | Per build |
+| **Mean Time to Resolution** | < 2 hours | Per incident |
+
+### Herramientas y Tecnologías
+
+> _Fusionado desde `docs/_archive/legacy-roots/TestingQualityGuide.md` (reconciliación SSOT)._
+
+| Categoría | Herramienta | Uso |
+|-----------|------------|-----|
+| **Unit Testing** | Jest, xUnit, Go test | Pruebas unitarias |
+| **Integration** | TestContainers, WireMock | Pruebas de integración |
+| **E2E** | Playwright, Cypress | Pruebas end-to-end |
+| **Security** | SonarQube, OWASP ZAP, Dependabot | Análisis de seguridad |
+| **Performance** | k6, JMeter | Pruebas de rendimiento |
+| **Monitoring** | OpenTelemetry, Grafana, Datadog | Observabilidad |
+
+### Future Evolution
+
+> _Fusionado desde `docs/_archive/legacy-roots/TESTING_QUALITY_GUIDE.md` (reconciliación SSOT)._
+
+#### Artificial Intelligence in Testing
+
+- Automated test case generation
+- Predictive failure analysis
+- Test suite optimization
+- Automated regression identification
+
+#### Advanced Automation
+
+- Self-correcting tests
+- Intelligent mock generation
+- Risk-based coverage analysis
+- Dynamic test prioritization
+
 ## Referencias
 - [Engineering Standards](../03-architecture-and-standards/02-engineering-standards.md)
 - [Development Lifecycle](01-development-lifecycle.md)
 
 > **Próximos Pasos**:  
-> - Configurar [pipelines de pruebas](../02-deployment-operations.md#cicd-pipeline)  
+> - Configurar [pipelines de pruebas](02-deployment-operations.md#cicd-pipeline)  
 > - Implementar [métricas de calidad](#métricas-de-calidad)  
 > - Definir [frameworks de pruebas](#frameworks-y-herramientas)  
 

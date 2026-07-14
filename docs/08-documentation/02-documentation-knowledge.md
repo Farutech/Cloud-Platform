@@ -236,6 +236,100 @@ La organización debe aprender de la gestión del conocimiento:
 - **Errores comunes**: Prevención de problemas
 - **Éxitos replicables**: Buenas prácticas a escalar
 
+### Tipos de Documentación
+
+> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT)._
+
+#### Documentación Técnica
+
+| Tipo | Ubicación | Responsabilidad | Actualización |
+|------|-----------|-----------------|---------------|
+| **Código** | Comentarios en código | Desarrolladores | En cada cambio |
+| **APIs** | OpenAPI specs | Arquitectos | En cada cambio de API |
+| **Arquitectura** | ADRs | Arquitectos | En cada decisión clave |
+| **Configuración** | Config files | DevOps | En cada cambio |
+| **Infraestructura** | IaC | DevOps | En cada cambio |
+
+#### Documentación de Producto
+
+| Tipo | Ubicación (SSOT) | Responsabilidad | Actualización |
+|------|-----------|-----------------|---------------|
+| **Requisitos** | `docs/10-requirements/` (`00-requirements-summary.md`) | Product Managers | En cada iteración |
+| **Épicas** | `docs/02-product-management/01-epics-and-features.md` | Product Managers | En cada sprint |
+| **Roadmap** | `docs/02-product-management/02-roadmap-tasks.md` | Product Managers | Mensual |
+| **User Stories** | `docs/02-product-management/05-user-stories.md` | Product Managers | En cada historia |
+
+#### Documentación Operativa
+
+| Tipo | Ubicación (SSOT) | Responsabilidad | Actualización |
+|------|-----------|-----------------|---------------|
+| **Procedimientos** | `docs/04-development-lifecycle/02-deployment-operations.md` | DevOps | En cada cambio |
+| **Runbooks** | `docs/04-development-lifecycle/05-incident-management.md` | DevOps | En cada incidente |
+| **Post-mortems** | `docs/04-development-lifecycle/05-incident-management.md` | Todos | Después de cada P1/P2 |
+| **Conocimiento** | `docs/07-knowledge-and-innovation/` | Todos | Continuamente |
+
+### Estructura de Documentación
+
+> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT). Estructura vigente (numerada)._
+
+#### Directorio docs/ (estructura vigente)
+
+```
+docs/
+├── 00-meta/                      # Decisiones ejecutivas y gobernanza
+├── 01-vision-and-fundamentals/   # Visión y arquitectura fundacional
+├── 02-product-management/        # PRD, épicas, roadmap, user stories
+├── 03-architecture-and-standards/ # ADRs y estándares (engineering, coding, config)
+├── 04-development-lifecycle/      # QA, despliegue, monitor, incidentes
+├── 05-security/                   # IAM y seguridad de dependencias
+├── 06-developer-experience/       # DX
+├── 07-knowledge-and-innovation/   # Gestión y arquitectura del conocimiento
+├── 08-documentation/              # Guías de documentación
+├── 09-ai-agents/                  # Agentes de IA y prompts
+├── 10-requirements/               # Requerimientos por dominio
+├── 11-templates/                  # Plantillas (ADR, épica, historia, etc.)
+└── _archive/                      # Red de seguridad de rollback (legacy roots + meta-churn)
+```
+
+#### Archivos Principales
+
+| Archivo | Propósito | Responsabilidad |
+|---------|-----------|-----------------|
+| `01-vision-and-fundamentals/04-index.md` | Índice maestro SSOT de toda la documentación | Arquitectos |
+| `08-documentation/01-documentation-guide.md` | Cómo organizar y mantener la documentación | Arquitectos |
+| `01-vision-and-fundamentals/02-platform-architecture.md` | Documento fundacional de arquitectura | Arquitectos |
+| `03-architecture-and-standards/05-configuration-standards.md` | Estándares y convenciones | Arquitectos |
+
+### Métricas de Documentación
+
+> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT)._
+
+| Métrica | Objetivo | Medición |
+|---------|----------|----------|
+| **Tasa de actualización** | > 95% actualizada | Análisis de commits |
+| **Tiempo medio de respuesta** | < 24 horas | Sistema de feedback |
+| **Satisfacción del equipo** | > 80% | Encuestas trimestrales |
+| **Uso de documentación** | > 90% consultada | Analytics |
+| **Calidad percibida** | > 85% útil | Feedback de usuarios |
+
+### Evolución Futura
+
+> _Fusionado desde `docs/_archive/legacy-roots/DocumentationKnowledgeGuide.md` (reconciliación SSOT)._
+
+#### Automatización Inteligente
+
+- Generación automática de documentación desde código
+- Análisis de uso para identificar documentación faltante
+- Recomendaciones de mejora basadas en feedback
+- Traducción automática para equipos globales
+
+#### Gestión Avanzada
+
+- Búsqueda semántica de documentación
+- Relaciones automáticas entre documentos
+- Alertas proactivas de documentación obsoleta
+- Integración con herramientas de desarrollo
+
 ## Referencias
 - [Knowledge Architecture](../03-architecture-and-standards/12-knowledge-architecture.md)
 - [Documentation Guide](01-documentation-guide.md)

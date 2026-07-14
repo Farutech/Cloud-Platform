@@ -1,0 +1,45 @@
+name: Document Structure Validation
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - '.github/workflows/validate-docs-structure.yml'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - '.github/workflows/validate-docs-structure.yml'
+  schedule:
+    - cron: '0 2 * * 1'  # Run at 2 AM UTC on Mondays
+
+jobs:
+  validate-docs-structure:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run document structure validation
+        run: |
+          chmod +x docs/validate_structure.sh
+          ./docs/validate_structure.sh
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: docs/validation_report_*.log
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "Document structure validation failed. Please review the generated logs in the workflow artifacts."
+          echo "Validation outputs are available in the 'validation-report' artifact."
+          echo "Run the validation script manually: ./docs/validate_structure.sh"
+        continue-on-error: true

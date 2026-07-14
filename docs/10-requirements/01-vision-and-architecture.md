@@ -197,9 +197,9 @@ Organización
 - [Engineering Standards](../../03-architecture-and-standards/02-engineering-standards.md)
 
 > **Próximos Pasos**:  
-> - Definir [modelo organizacional](02-requirements-part02.md)  
-> - Establecer [estándares técnicos](03-requirements-part03.md)  
-> - Diseñar [modelo operativo](04-requirements-part04.md)  
+> - Definir [modelo organizacional](02-technical-organization.md)  
+> - Establecer [estándares técnicos](03-engineering-standards.md)  
+> - Diseñar [modelo operativo](04-operating-model.md)  
 
 ---
 *Versión del documento: 1.0.0 | Creado: 2026-07-07 | Revisión: Trimestral*

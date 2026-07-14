@@ -305,9 +305,9 @@ Relacionada con procesos y herramientas, puede impedir automatización.
 - [Engineering Standards](../../03-architecture-and-standards/02-engineering-standards.md)
 
 > **Próximos Pasos**:  
-> - Definir [arquitectura de IA](05-requirements-part05.md)  
-> - Establecer [arquitectura del conocimiento](06-requirements-part06.md)  
-> - Diseñar [gobierno arquitectónico](07-requirements-part07.md)  
+> - Definir [arquitectura de IA](05-ai-assisted-engineering.md)  
+> - Establecer [arquitectura del conocimiento](06-knowledge-architecture.md)  
+> - Diseñar [gobierno arquitectónico](07-architecture-governance.md)  
 
 ---
 *Versión del documento: 1.0.0 | Creado: 2026-07-07 | Revisión: Trimestral*

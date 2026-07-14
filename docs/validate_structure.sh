@@ -1,248 +1,179 @@
 #!/bin/bash
+#
+# validate_structure.sh — Farutech Cloud Platform documentation structure gate
+#
+# Purpose: verify the SSOT documentation tree is well-formed before a PR merges.
+# Exits 0 when clean, 1 when a real structural/duplicate/secret problem is found.
+#
+# Design notes (avoiding known false positives):
+#   - ADR files use a 3-digit prefix (NNN-) by convention; both NN- and NNN- are valid.
+#   - _archive/ is a frozen rollback safety net and is EXCLUDED from every check.
+#   - "Sensitive content" only matches real credential patterns, not prose that
+#     merely mentions password/token/key (e.g. "password policy", "access token").
 
-# Script de validación para la estructura de documentación de Farutech Cloud Platform
-# Este script verifica la nomenclatura, metadatos y contenido sensible en los archivos
+set -u
 
-echo "🔍 Iniciando validación de estructura de documentación..."
-echo "Fecha: $(date)"
-echo ""
-
-# Variables
 DOCS_DIR="./docs"
 LOG_FILE="$DOCS_DIR/validation_report_$(date +%Y%m%d_%H%M%S).log"
 
-# Función para escribir en el log
-write_log() {
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> $LOG_FILE
-}
+log() { echo "$(date '+%Y-%m-%d %H:%M:%S') - $*" >> "$LOG_FILE"; }
 
-write_log "=== Inicio de validación ==="
+log "=== Inicio de validación ==="
+echo "🔍 Farutech documentation structure validation"
+echo "Fecha: $(date)"
+echo ""
 
+CRITICAL=0
+
+# ---------------------------------------------------------------------------
+# 1. Expected top-level directories
+# ---------------------------------------------------------------------------
 echo "📁 Verificando estructura de directorios..."
-write_log "Verificando estructura de directorios"
-
-# Verificar que los directorios principales existen con la nomenclatura correcta
-DIRECTORIOS_ESPERADOS=(
-    "00-meta"
-    "01-vision-and-fundamentals" 
-    "02-product-management"
-    "03-architecture-and-standards"
-    "04-development-lifecycle"
-    "05-security"
-    "06-developer-experience"
-    "07-knowledge-and-innovation"
-    "08-documentation"
-    "09-ai-agents"
-    "10-requirements"
-    "11-templates"
+EXPECTED_DIRS=(
+  "00-meta" "01-vision-and-fundamentals" "02-product-management"
+  "03-architecture-and-standards" "04-development-lifecycle" "05-security"
+  "06-developer-experience" "07-knowledge-and-innovation" "08-documentation"
+  "09-ai-agents" "10-requirements" "11-templates"
 )
-
-echo "  - Directorios esperados: ${#DIRECTORIOS_ESPERADOS[@]}"
-for dir in "${DIRECTORIOS_ESPERADOS[@]}"; do
-    if [ -d "$DOCS_DIR/$dir" ]; then
-        echo "    ✓ $dir"
-        write_log "Directorio encontrado: $dir"
-    else
-        echo "    ✗ $dir - ¡FALTANTE!"
-        write_log "ERROR: Directorio faltante: $dir"
-    fi
+for d in "${EXPECTED_DIRS[@]}"; do
+  if [ -d "$DOCS_DIR/$d" ]; then
+    echo "    ✓ $d"
+  else
+    echo "    ✗ $d - FALTANTE"
+    log "ERROR: directorio faltante: $d"
+    CRITICAL=$((CRITICAL + 1))
+  fi
 done
-
 echo ""
+
+# ---------------------------------------------------------------------------
+# 2. File naming convention (active tree only, _archive excluded)
+#    Valid: NN-kebab.md, NNN-kebab.md (ADRs), README.md
+# ---------------------------------------------------------------------------
 echo "📄 Verificando nomenclatura de archivos..."
+BAD_NAMES=0
+while IFS= read -r -d '' f; do
+  base=$(basename "$f")
+  if [[ "$base" == "README.md" ]]; then
+    continue
+  fi
+  if [[ "$base" =~ ^[0-9]{2}-[a-z0-9-]+\.md$ ]] || [[ "$base" =~ ^[0-9]{3}-[a-z0-9-]+\.md$ ]]; then
+    continue
+  fi
+  echo "    ✗ $f (nomenclatura no cumple NN- / NNN-kebab.md)"
+  log "Archivo con nomenclatura incorrecta: $f"
+  BAD_NAMES=$((BAD_NAMES + 1))
+done < <(find "$DOCS_DIR" -name "*.md" -not -path "*/_archive/*" -print0)
 
-# Contar archivos con nomenclatura correcta (prefijo numérico + kebab-case)
-ARCHIVOS_CORRECTOS=0
-ARCHIVOS_INCORRECTOS=0
-TOTAL_ARCHIVOS=0
-
-while IFS= read -r -d '' file; do
-    ((TOTAL_ARCHIVOS++))
-    
-    # Extraer nombre de archivo
-    filename=$(basename "$file")
-    
-    # Verificar si el nombre cumple con el patrón: NN-nombre-en-minusculas-o-descripcion.md
-    if [[ $filename =~ ^[0-9]{2}-[a-z0-9-]+\.md$ ]]; then
-        ((ARCHIVOS_CORRECTOS++))
-    else
-        # Permitir README.md como archivo especial
-        if [[ "$filename" != "README.md" && "$filename" != "PHASE_1_DETAILED_AUDIT.md" ]]; then
-            ((ARCHIVOS_INCORRECTOS++))
-            echo "    ✗ $file"
-            write_log "Archivo con nomenclatura incorrecta: $file"
-        else
-            ((ARCHIVOS_CORRECTOS++))
-        fi
-    fi
-done < <(find "$DOCS_DIR" -name "*.md" -not -path "*/requirements/*" -not -path "./docs/requirements/*" -not -path "*/.migration-backup/*" -print0)
-
-echo "  - Total archivos verificados: $TOTAL_ARCHIVOS"
-echo "  - Correctamente nombrados: $ARCHIVOS_CORRECTOS"
-echo "  - Incorrectamente nombrados: $ARCHIVOS_INCORRECTOS"
-write_log "Total archivos verificados: $TOTAL_ARCHIVOS, Correctos: $ARCHIVOS_CORRECTOS, Incorrectos: $ARCHIVOS_INCORRECTOS"
-
-echo ""
-echo "🔍 Buscando archivos duplicados fuera de estructura organizada..."
-
-# Buscar archivos que podrían ser duplicados de la estructura organizada
-DUPLICADOS_ENCONTRADOS=0
-
-# Directorio requirements (completamente duplicado)
-if [ -d "$DOCS_DIR/requirements" ]; then
-    COUNT=$(find "$DOCS_DIR/requirements" -name "*.md" | wc -l)
-    echo "  ✗ Directorio duplicado: $DOCS_DIR/requirements ($COUNT archivos)"
-    write_log "Directorio duplicado encontrado: $DOCS_DIR/requirements"
-    ((DUPLICADOS_ENCONTRADOS += COUNT))
+if [ "$BAD_NAMES" -gt 0 ]; then
+  CRITICAL=$((CRITICAL + 1))
 fi
+echo "    - Archivos fuera de convención: $BAD_NAMES"
+echo ""
 
-# Archivos individuales que podrían ser duplicados
-ARCHIVOS_POTENCIALMENTE_DUPLICADOS=(
-    "AI_AGENTS_PROMPTS_GUIDE.md"
-    "DATA_GOVERNANCE_GUIDE.md"
-    "DEPENDENCIES_SECURITY_GUIDE.md"
-    "DEPLOYMENT_OPERATIONS_GUIDE.md"
-    "DEVELOPER_EXPERIENCE_GUIDE.md"
-    "DEVELOPMENT_LIFECYCLE_GUIDE.md"
-    "DeveloperExperienceGuide.md"
-    "DevelopmentLifecycleGuide.md"
-    "DOCUMENTATION_GUIDE.md"
-    "DOCUMENTATION_KNOWLEDGE_GUIDE.md"
-    "DocumentationGuide.md"
-    "DocumentationKnowledgeGuide.md"
-    "IA-Agents.md"
-    "INCIDENT_MANAGEMENT_GUIDE.md"
-    "IncidentManagementGuide.md"
-    "INNOVATION_MANAGEMENT_GUIDE.md"
-    "InnovationManagementGuide.md"
-    "KNOWLEDGE_ARCHITECTURE.md"
-    "KNOWLEDGE_MANAGEMENT_GUIDE.md"
-    "KnowledgeManagementGuide.md"
-    "MONITORING_OBSERVABILITY_GUIDE.md"
-    "MonitoringObservabilityGuide.md"
-    "PACKAGES_LIBRARY_GUIDE.md"
-    "PackagesLibraryGuide.md"
-    "SECURITY_ACCESS_GUIDE.md"
-    "SecurityAccessGuide.md"
-    "SOFTWARE_QUALITY_MANAGEMENT_GUIDE.md"
-    "SoftwareQualityManagementGuide.md"
-    "TaskManagementGuide.md"
-    "TeamOrganizationGuide.md"
-    "TECHNICAL_DEBT_MANAGEMENT_GUIDE.md"
-    "TECHNICAL_GOVERNANCE_GUIDE.md"
-    "TECHNICAL_SUSTAINABILITY_GUIDE.md"
-    "TechnicalDebtManagementGuide.md"
-    "TechnicalGovernanceGuide.md"
-    "TechnicalSustainabilityGuide.md"
-    "TESTING_QUALITY_GUIDE.md"
-    "TestingQualityGuide.md"
-    "VERSIONING_RELEASES_GUIDE.md"
-    "VersioningReleasesGuide.md"
-    "PROMPT_MASTER_GUIDE.md"
+# ---------------------------------------------------------------------------
+# 3. Duplicate detection (active tree only)
+#    Flag any of the known legacy duplicate filenames if they reappear,
+#    and any byte-identical basename collision across active dirs.
+# ---------------------------------------------------------------------------
+echo "🔍 Buscando duplicados fuera de estructura organizada..."
+DUP=0
+LEGACY_DUPES=(
+  "AI_AGENTS_PROMPTS_GUIDE.md" "IA-Agents.md" "KNOWLEDGE_ARCHITECTURE.md"
+  "TECHNICAL_GOVERNANCE_GUIDE.md" "TECHNICAL_SUSTAINABILITY_GUIDE.md"
+  "TESTING_QUALITY_GUIDE.md" "MONITORING_OBSERVABILITY_GUIDE.md"
+  "DATA_GOVERNANCE_GUIDE.md" "DEPENDENCIES_SECURITY_GUIDE.md"
+  "DEPLOYMENT_OPERATIONS_GUIDE.md" "DEVELOPER_EXPERIENCE_GUIDE.md"
+  "DEVELOPMENT_LIFECYCLE_GUIDE.md" "DOCUMENTATION_GUIDE.md"
+  "DOCUMENTATION_KNOWLEDGE_GUIDE.md" "INCIDENT_MANAGEMENT_GUIDE.md"
+  "INNOVATION_MANAGEMENT_GUIDE.md" "KNOWLEDGE_MANAGEMENT_GUIDE.md"
+  "PACKAGES_LIBRARY_GUIDE.md" "SECURITY_ACCESS_GUIDE.md"
+  "SOFTWARE_QUALITY_MANAGEMENT_GUIDE.md" "TECHNICAL_DEBT_MANAGEMENT_GUIDE.md"
+  "VERSIONING_RELEASES_GUIDE.md" "PROMPT_MASTER_GUIDE.md"
 )
-
-for archivo in "${ARCHIVOS_POTENCIALMENTE_DUPLICADOS[@]}"; do
-    if [ -f "$DOCS_DIR/$archivo" ]; then
-        echo "  ✗ Archivo potencialmente duplicado: $DOCS_DIR/$archivo"
-        write_log "Archivo potencialmente duplicado: $DOCS_DIR/$archivo"
-        ((DUPLICADOS_ENCONTRADOS++))
-    fi
+for name in "${LEGACY_DUPES[@]}"; do
+  if [ -f "$DOCS_DIR/$name" ]; then
+    echo "    ✗ Duplicado legacy en raíz: $DOCS_DIR/$name"
+    log "Duplicado legacy encontrado: $name"
+    DUP=$((DUP + 1))
+  fi
 done
+# Collision: same basename present in two different active locations
+while IFS= read -r name; do
+  count=$(find "$DOCS_DIR" -name "$name" -not -path "*/_archive/*" | wc -l)
+  if [ "$count" -gt 1 ]; then
+    echo "    ✗ Colisión de nombre: $name ($count ubicaciones)"
+    log "Colisión de nombre: $name"
+    DUP=$((DUP + 1))
+  fi
+done < <(find "$DOCS_DIR" -name "*.md" -not -path "*/_archive/*" -printf '%f\n' | sort -u)
 
-echo "  - Posibles duplicados identificados: $DUPLICADOS_ENCONTRADOS"
-write_log "Posibles duplicados identificados: $DUPLICADOS_ENCONTRADOS"
-
+if [ "$DUP" -gt 0 ]; then
+  CRITICAL=$((CRITICAL + 1))
+fi
+echo "    - Duplicados identificados: $DUP"
 echo ""
-echo "🔒 Verificando contenido sensible..."
 
-# Buscar posibles credenciales, claves u otra información sensible
-CONTENIDO_SENSIBLE_ENCONTRADO=0
+# ---------------------------------------------------------------------------
+# 4. Sensitive content — ONLY real credential patterns (not prose)
+# ---------------------------------------------------------------------------
+echo "🔒 Verificando contenido sensible (patrones reales)..."
+SENS=0
+while IFS= read -r -d '' f; do
+  if grep -Eqi \
+      -e '\bpassword\b[[:space:]]*[:=]' \
+      -e '\bsecret\b[[:space:]]*[:=]' \
+      -e '\bapi[_-]?key\b[[:space:]]*[:=]' \
+      -e '\btoken\b[[:space:]]*[:=]' \
+      -e 'AKIA[0-9A-Z]{16}' \
+      -e '-----BEGIN.*PRIVATE KEY-----' \
+      -e 'Bearer[[:space:]]+[A-Za-z0-9._\-]+' \
+      -e 'gh[pousr]_[A-Za-z0-9]{20,}' \
+      "$f"; then
+    echo "    ⚠️  Posible secreto en: $f"
+    log "Posible contenido sensible: $f"
+    SENS=$((SENS + 1))
+  fi
+done < <(find "$DOCS_DIR" -name "*.md" -not -path "*/_archive/*" -print0)
 
-# Patrones comunes de información sensible
-SENSITIVE_PATTERNS=(
-    "password"
-    "secret"
-    "token"
-    "key[^a-zA-Z]"  # Para evitar falsos positivos con palabras como "keyboard"
-    "credential"
-    "private"
-    "api[_-]*key"
-    "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"  # Direcciones IP
-    "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"  # Correos electrónicos
-)
-
-for pattern in "${SENSITIVE_PATTERNS[@]}"; do
-    # Buscar sin distinguir mayúsculas/minúsculas, excluyendo este archivo de validación
-    RESULT=$(find "$DOCS_DIR" -name "*.md" -not -path "*validate*" -exec grep -l -i -n "$pattern" {} \; 2>/dev/null)
-    if [ ! -z "$RESULT" ]; then
-        while IFS= read -r file; do
-            if [ -n "$file" ]; then
-                echo "  ⚠️  Posible contenido sensible en: $file (patrón: $pattern)"
-                write_log "Posible contenido sensible en: $file (patrón: $pattern)"
-                ((CONTENIDO_SENSIBLE_ENCONTRADO++))
-            fi
-        done <<< "$RESULT"
-    fi
-done
-
-echo "  - Alertas de contenido sensible: $CONTENIDO_SENSIBLE_ENCONTRADO"
-write_log "Alertas de contenido sensible: $CONTENIDO_SENSIBLE_ENCONTRADO"
-
+if [ "$SENS" -gt 0 ]; then
+  CRITICAL=$((CRITICAL + 1))
+fi
+echo "    - Alertas de contenido sensible: $SENS"
 echo ""
-echo "📋 Verificando metadatos YAML..."
 
-# Contar archivos que tienen encabezado YAML con metadatos
-ARCHIVOS_CON_METADATOS=0
-ARCHIVOS_SIN_METADATOS=0
-
-while IFS= read -r -d '' file; do
-    # Saltar este archivo de validación y archivos especiales
-    if [[ "$file" != *validate* ]] && [[ "$file" != *README.md ]] && [[ "$file" != *PHASE_1_DETAILED_AUDIT.md ]]; then
-        # Verificar si el archivo comienza con un encabezado YAML
-        if head -n 10 "$file" 2>/dev/null | grep -q "^---$"; then
-            ((ARCHIVOS_CON_METADATOS++))
-        else
-            ((ARCHIVOS_SIN_METADATOS++))
-            write_log "Archivo sin metadatos YAML: $file"
-        fi
-    fi
-done < <(find "$DOCS_DIR" -name "*.md" -not -path "*/requirements/*" -not -path "./docs/requirements/*" -not -path "*/.migration-backup/*" -print0)
-
-echo "  - Archivos con metadatos YAML: $ARCHIVOS_CON_METADATOS"
-echo "  - Archivos sin metadatos YAML: $ARCHIVOS_SIN_METADATOS"
-write_log "Archivos con metadatos: $ARCHIVOS_CON_METADATOS, Sin metadatos: $ARCHIVOS_SIN_METADATOS"
-
+# ---------------------------------------------------------------------------
+# 5. YAML front-matter (informational only — not critical)
+# ---------------------------------------------------------------------------
+echo "📋 Verificando metadatos YAML (informativo)..."
+WITH=0; WITHOUT=0
+while IFS= read -r -d '' f; do
+  base=$(basename "$f")
+  if [[ "$base" == "README.md" ]]; then continue; fi
+  if head -n 5 "$f" 2>/dev/null | grep -q '^---$'; then
+    WITH=$((WITH + 1))
+  else
+    WITHOUT=$((WITHOUT + 1))
+    log "Archivo sin metadatos YAML: $f"
+  fi
+done < <(find "$DOCS_DIR" -name "*.md" -not -path "*/_archive/*" -print0)
+echo "    - Con metadatos: $WITH | Sin metadatos: $WITHOUT"
 echo ""
+
+# ---------------------------------------------------------------------------
+# Summary
+# ---------------------------------------------------------------------------
 echo "📊 Resumen de validación:"
-echo "  - Directorios correctos: $(echo "${DIRECTORIOS_ESPERADOS[@]}" | wc -w)/$(echo "${DIRECTORIOS_ESPERADOS[@]}" | wc -w)"
-echo "  - Archivos correctamente nombrados: $ARCHIVOS_CORRECTOS/$TOTAL_ARCHIVOS"
-echo "  - Duplicados identificados: $DUPLICADOS_ENCONTRADOS"
-echo "  - Alertas de contenido sensible: $CONTENIDO_SENSIBLE_ENCONTRADO"
-echo "  - Archivos con metadatos: $ARCHIVOS_CON_METADATOS/$(($TOTAL_ARCHIVOS - $ARCHIVOS_SIN_METADATOS))"
-echo "  - Archivos sin metadatos: $ARCHIVOS_SIN_METADATOS"
-
-write_log "=== Fin de validación ==="
+echo "    - Directorios esperados: ${#EXPECTED_DIRS[@]}/12"
+echo "    - Errores críticos: $CRITICAL"
+log "=== Fin de validación (críticos=$CRITICAL) ==="
 echo ""
-echo "📝 Reporte guardado en: $LOG_FILE"
+echo "📝 Reporte: $LOG_FILE"
 
-# Determinar si hay errores críticos
-ERRORES_CRITICOS=0
-if [ $DUPLICADOS_ENCONTRADOS -gt 0 ]; then
-    ERRORES_CRITICOS=$((ERRORES_CRITICOS + 1))
-fi
-
-if [ $CONTENIDO_SENSIBLE_ENCONTRADO -gt 0 ]; then
-    ERRORES_CRITICOS=$((ERRORES_CRITICOS + 1))
-fi
-
-if [ $ERRORES_CRITICOS -gt 0 ]; then
-    echo ""
-    echo "❌ Se encontraron $ERRORES_CRITICOS errores críticos que requieren atención"
-    echo "   Por favor revise el reporte para detalles."
-    exit 1
+if [ "$CRITICAL" -gt 0 ]; then
+  echo "❌ Validación falló con $CRITICAL error(es) crítico(s)."
+  exit 1
 else
-    echo ""
-    echo "✅ Validación completada sin errores críticos"
-    echo "   La estructura de documentación está en buen estado."
-    exit 0
+  echo "✅ Validación completada sin errores críticos."
+  exit 0
 fi

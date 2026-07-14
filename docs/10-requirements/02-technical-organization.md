@@ -284,9 +284,9 @@ repo/
 - [Engineering Standards](../../03-architecture-and-standards/02-engineering-standards.md)
 
 > **Próximos Pasos**:  
-> - Establecer [estándares técnicos](03-requirements-part03.md)  
-> - Definir [modelo operativo](04-requirements-part04.md)  
-> - Diseñar [arquitectura de IA](05-requirements-part05.md)  
+> - Establecer [estándares técnicos](03-engineering-standards.md)  
+> - Definir [modelo operativo](04-operating-model.md)  
+> - Diseñar [arquitectura de IA](05-ai-assisted-engineering.md)  
 
 ---
 *Versión del documento: 1.0.0 | Creado: 2026-07-07 | Revisión: Trimestral*

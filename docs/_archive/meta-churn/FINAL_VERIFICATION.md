@@ -1,3 +1,5 @@
+> **Estado**: `Superseded` — Reemplazado por la reorganización de gobernanza (2026-07, rama `docs/governance-reorg`). La migración aqui descrita estaba incompleta (p.ej. el arbol `docs/requirements/` no se habia consolidado en `10-requirements/`). Ver `docs/_archive/README.md`.
+
 # VERIFICACIÓN FINAL DE MIGRACIÓN
 
 ## Fecha: 2026-07-07

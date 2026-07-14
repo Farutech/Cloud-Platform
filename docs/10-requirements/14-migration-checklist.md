@@ -43,7 +43,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 
 #### Migración de Archivos Individuales
 
-##### Part01.md → 01-requirements-part01.md
+##### Part01.md → 01-vision-and-architecture.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -51,7 +51,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part02.md → 02-requirements-part02.md
+##### Part02.md → 02-technical-organization.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -59,7 +59,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part03.md → 03-requirements-part03.md
+##### Part03.md → 03-engineering-standards.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -67,7 +67,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part04.md → 04-requirements-part04.md
+##### Part04.md → 04-operating-model.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -75,7 +75,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part05.md → 05-requirements-part05.md
+##### Part05.md → 05-ai-assisted-engineering.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -83,7 +83,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part06.md → 06-requirements-part06.md
+##### Part06.md → 06-knowledge-architecture.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -91,7 +91,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part07.md → 07-requirements-part07.md
+##### Part07.md → 07-architecture-governance.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -99,7 +99,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part08.md → 08-requirements-part08.md
+##### Part08.md → 08-operation-model.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -107,7 +107,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part09.md → 09-requirements-part09.md
+##### Part09.md → 09-foundational-kit.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -115,7 +115,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part10.md → 10-requirements-part10.md
+##### Part10.md → 10-organizational-model.md
 - [ ] Archivo copiado a nueva ubicación
 - [ ] Formato estándar aplicado correctamente
 - [ ] Metadatos completados (propósito, audiencia, propietario, etc.)
@@ -123,7 +123,7 @@ Este checklist proporciona una lista detallada de verificación para asegurar qu
 - [ ] Referencias internas actualizadas si aplica
 - [ ] Enlaces a otros documentos verificados
 
-##### Part11.md → 11-requirements-part11.md
+##### Part11.md → 09-foundational-kit.md
 - [ ] Documento creado indicando que es duplicado de Part09
 - [ ] Referencia clara al documento original incluida
 - [ ] Explicación del motivo del duplicado documentada
