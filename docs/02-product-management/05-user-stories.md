@@ -39,7 +39,15 @@
 
 **Acceptance Criteria (BDD)**
 
-- ⚠️ **Gap del artefacto fuente**: el artefacto del PM no incluye criterios de aceptación para US-2.2. No se inventan aquí; pendiente de definición por Product Management antes del inicio del sprint correspondiente (DoR canónico exige AC definidos).
+> **Cerrado por Product Management (PM)**: el artefacto fuente no traía AC para US-2.2. Por directiva del PM se definen los siguientes criterios, anclados a decisiones existentes — API de creación de tenant y aislamiento por `Tenant_ID` (EPIC-002), onboarding < 5 min (KPI A.6), inyección/validación de contexto de tenant (US-2.1) y trazabilidad de auditoría (EPIC-005).
+
+- **Given** un Platform Admin autenticado vía Keycloak con rol de administración de plataforma
+- **When** envía una petición `POST /api/tenants` con la configuración requerida del nuevo tenant
+- **Then** el sistema debe crear la estructura del tenant (contexto de base de datos/schema aislado por `Tenant_ID`) y responder `201 Created` con el `Tenant_ID` generado
+- **And** el nuevo tenant debe quedar aislado lógicamente: ninguna consulta de otro tenant debe poder leer o escribir su datos (ver US-2.1)
+- **And** el proceso de onboarding completo (creación de estructura + credenciales iniciales de administrador de tenant) debe finalizar en menos de 5 minutos (KPI A.6)
+- **And** se debe registrar una entrada de auditoría inmutable de la creación (actor, timestamp, `Tenant_ID`) para trazabilidad (EPIC-005)
+- **And** si la petición carece de los campos obligatorios o el rol no tiene privilegios, el sistema debe responder `400 Bad Request` / `403 Forbidden` sin crear ninguna estructura parcial
 
 ## De EPIC-003 (IAM / Keycloak)
 

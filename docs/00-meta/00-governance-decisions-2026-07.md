@@ -57,12 +57,12 @@ Para detener el "meta-churn" reportado, ejecutaremos este plan de saneamiento (S
   - Knowledge → `12-knowledge-architecture.md`, `07-knowledge-and-innovation/01-knowledge-management.md`, `08-documentation/02-documentation-knowledge.md`
 - **Manifiesto `_archive`** actualizado a "Reconciliado (paridad confirmada)" con trazabilidad de commits.
 
-## Próximos Pasos (pendientes de ejecución)
+## Próximos Pasos (ejecutados)
 
-1. **Integrar `validate_structure.sh` en CI** (Plan B.2) — habilitar rechazo automático de PRs con duplicados/enlaces rotos.
-2. **Refinar EPIC-006 (Seguridad)** en épicas atómicas (Logging, Control de Acceso) — pendiente post-MVP.
-3. **Cerrar AC de US-2.2** (gap de artefacto: el source no trajo AC).
-4. **Definir workers como EPIC-004** (post-MVP) — ver ADR-014.
+1. ✅ **Integrar `validate_structure.sh` en CI** (Plan B.2) — workflow `.github/workflows/validate-docs-structure.yml` dispara en push/PR (incluye merge a `main`) y semanal; rechaza PRs con duplicados/enlaces rotos.
+2. ✅ **Refinar EPIC-006 (Seguridad)** en épicas atómicas — formalizadas como **EPIC-005 (Logging & Audit)** y **EPIC-006 (Access Control)** en `01-epics-and-features.md`.
+3. ✅ **Cerrar AC de US-2.2** — criterios BDD definidos por PM en `05-user-stories.md` (anclados a EPIC-002, KPI A.6, US-2.1, EPIC-005).
+4. ✅ **Definir workers como EPIC-004** — épica **EPIC-004 (Async Workers, Go)** en `01-epics-and-features.md`, referencia ADR-014 / ADR-013.
 
 ## Trazabilidad de commits
 

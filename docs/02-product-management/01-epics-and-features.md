@@ -2,7 +2,7 @@
 
 > **Estado**: Vigente V1 · **Owner**: CPO / Principal PM (Feifei) · **Aprobación**: Product Management + Architecture Board
 > **Fuente**: Artefacto de producto obligatorio del PM. Extraído fielmente del transcript de sesión; ver `docs/_archive/legacy-roots/pm-artifacts-source.md`.
-> **Resolución de colisión de IDs**: Las épicas previas (EPIC-001..006, archivo legado en `docs/_archive/legacy-roots/02-product-management/01-epics-and-features.md`) quedan **suprimidas** por las siguientes. La numeración EPIC-001/002/003 es la canónica post-decisión ejecutiva (§A).
+> **Resolución de colisión de IDs**: Las épicas previas (EPIC-001..006, archivo legado en `docs/_archive/legacy-roots/02-product-management/01-epics-and-features.md`) quedan **suprimidas** por las siguientes. El conjunto canónico post-decisión ejecutiva (§A) es **EPIC-001 … EPIC-006** (001 Gobernanza/SSOT, 002 Core Multi-Tenancy, 003 IAM/Keycloak, 004 Async Workers, 005 Logging & Audit, 006 Access Control).
 
 ## Épicas Principales (Canónicas)
 
@@ -36,18 +36,54 @@ Implementación y configuración de Keycloak como proveedor de OIDC/OAuth2 y MFA
 - Gestión de roles y MFA forzado por Tenant Admin.
 - Emisión de JWT firmados asimétricamente (ADR-011).
 
+### EPIC-004: Async Workers (Go)
+
+Procesamiento asíncrono de trabajos en segundo plano mediante workers en Go, desacoplando operaciones largas del ciclo de request/response.
+
+**Alcance clave**:
+- Consumo de la cola de mensajes (RabbitMQ — ADR-013) por workers en Go (ADR-014).
+- Handlers idempotentes y confirmación de mensajes (ack/nack) con reintentos acotados.
+- Graceful shutdown y tolerancia a caídas (consumo desde el último offset válido).
+- Observabilidad de workers: métricas de cola, latencia de procesamiento y trazas distribuidas.
+
+**Fase**: V2 (post-MVP). Depende de EPIC-002 (CQRS nativo) y del broker definido en ADR-013.
+
+### EPIC-005: Security — Centralized Logging & Audit
+
+Trazabilidad centralizada, inmutable y consultable de eventos de seguridad y operación de la plataforma.
+
+**Alcance clave**:
+- Logging estructurado en JSON con contexto de `Tenant_ID` en cada entrada.
+- Registro de auditoría de operaciones sensibles (login, cambios de rol, creación de tenant).
+- Retención y hashing de logs para integridad (preparación ISO 27001 / SOC 2 en V2).
+- Detección de anomalías y alertas P1–P4 (ver `04-monitoring-observability.md`).
+
+**Fase**: V2 (post-MVP). Habilita el cumplimiento OWASP y la trazabilidad post-incidente.
+
+### EPIC-006: Security — Access Control
+
+Control de acceso fino, autorización por recurso y segregación de privilegios más allá de la autenticación IAM.
+
+**Alcance clave**:
+- RBAC granular con roles por tenant y permisos por recurso.
+- Validación de autorización en cada request (no solo autenticación — ver US-2.1).
+- Segregación de privilegios (admin de plataforma vs admin de tenant vs usuario).
+- Auditoría de cambios de permisos y revisión periódica de accesos.
+
+**Fase**: V2 (post-MVP). Complementa EPIC-003 (IAM) cerrando el lado de autorización.
+
 ---
 
 ## Notas de Gobernanza (no alteran el alcance canónico)
 
-### División de Seguridad (decisión A.17)
+### División de Seguridad (decisión A.17) — COMPLETADA
 
-La épica legada **EPIC-006 (Seguridad y Auditoría)** se divide en épicas atómicas y testeables:
-- **Gestión IAM** → absorbida por **EPIC-003**.
-- **Logging** → épica atómica pendiente de desglose (post-MVP).
-- **Control de Acceso** → épica atómica pendiente de desglose (post-MVP).
+La épica legada **EPIC-006 (Seguridad y Auditoría)** quedó descompuesta en épicas atómicas y testeables:
+- **Gestión IAM** → absorbida por **EPIC-003** (Keycloak, ADR-011).
+- **Logging** → formalizada como **EPIC-005 (Centralized Logging & Audit)**.
+- **Control de Acceso** → formalizada como **EPIC-006 (Access Control)**.
 
-Estas dos últimas se formalizarán como artefactos independientes cuando el roadmap entre en fase de Compliance (V2).
+El conjunto canónico de épicas es ahora **EPIC-001 … EPIC-006**. Las dos últimas (005, 006) y los workers (**EPIC-004**) se ejecutan en fase V2 (post-MVP) según el roadmap.
 
 ### Features y Tareas Técnicas
 
