@@ -44,3 +44,32 @@ Para detener el "meta-churn" reportado, ejecutaremos este plan de saneamiento (S
 - Épicas: `docs/02-product-management/01-epics-and-features.md` (EPIC-001 Gobernanza/SSOT, EPIC-002 Core Multi-Tenancy, EPIC-003 IAM/Keycloak)
 - Roadmap: `docs/02-product-management/02-roadmap-tasks.md` (MVP / V1 / V2)
 - User Stories + AC (BDD): `docs/02-product-management/05-user-stories.md` (US-1.1, US-2.1, US-2.2, US-3.1, US-3.2)
+
+## Actualizaciones (posteriores a la resolución inicial)
+
+- **BuenasPracticas (A.12):** Auditado y **purgado como ruido personal (Opción 1)** — los 563 archivos personales fueron preservados en `docs/_archive/meta-churn/BuenasPracticas` (0 estándares técnicos encontrados). Ver `01-buenaspracticas-audit.md` y `03-buenaspracticas-purge.md`.
+- **6 raíces divergentes reconciliadas** (commits `d0f8e5b`, `ca829db`): el contenido único de cada raíz fue fusionado en su hogar numerado canónico en lugar de eliminarse.
+  - IA-Agents → `09-ai-agents/01-ai-agents-overview.md`, `09-ai-agents/02-ai-agents-prompts.md`
+  - Monitoring → `04-development-lifecycle/04-monitoring-observability.md`
+  - Testing → `04-development-lifecycle/03-testing-quality.md`
+  - Technical Governance → `08-technical-governance.md`
+  - Technical Sustainability → `10-technical-sustainability.md`
+  - Knowledge → `12-knowledge-architecture.md`, `07-knowledge-and-innovation/01-knowledge-management.md`, `08-documentation/02-documentation-knowledge.md`
+- **Manifiesto `_archive`** actualizado a "Reconciliado (paridad confirmada)" con trazabilidad de commits.
+
+## Próximos Pasos (pendientes de ejecución)
+
+1. **Integrar `validate_structure.sh` en CI** (Plan B.2) — habilitar rechazo automático de PRs con duplicados/enlaces rotos.
+2. **Refinar EPIC-006 (Seguridad)** en épicas atómicas (Logging, Control de Acceso) — pendiente post-MVP.
+3. **Cerrar AC de US-2.2** (gap de artefacto: el source no trajo AC).
+4. **Definir workers como EPIC-004** (post-MVP) — ver ADR-014.
+
+## Trazabilidad de commits
+
+- `8561ced`: Artefactos PM (PRD, Épicas, Roadmap, User Stories) + índice + archivo.
+- `d0f8e5b`: Reconciliación IA-Agents.
+- `8b554fe`: Auditoría BuenasPracticas (A.12).
+- `ca829db`: Reconciliación tópicos 2–6.
+- `7084135`: Actualización manifiesto `_archive`.
+- `9c45e37`: Reporte ejecutivo de 22 secciones.
+- `d83a1c1`: Documentación purga BuenasPracticas (A.12, Opción 1).
