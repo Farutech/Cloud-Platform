@@ -72,17 +72,16 @@ docs/
 │
 ├── 10-requirements/           # Requerimientos
 │   ├── 00-requirements-summary.md  # Resumen de requerimientos
-│   ├── 01-requirements-part01.md  # Parte 01: Visión y arquitectura
-│   ├── 02-requirements-part02.md  # Parte 02: Organización técnica
-│   ├── 03-requirements-part03.md  # Parte 03: Estándares de ingeniería
-│   ├── 04-requirements-part04.md  # Parte 04: Modelo operativo
-│   ├── 05-requirements-part05.md  # Parte 05: Ingeniería asistida por IA
-│   ├── 06-requirements-part06.md  # Parte 06: Arquitectura del conocimiento
-│   ├── 07-requirements-part07.md  # Parte 07: Gobierno arquitectónico
-│   ├── 08-requirements-part08.md  # Parte 08: Modelo de operación
-│   ├── 09-requirements-part09.md  # Parte 09: Kit fundacional
-│   ├── 10-requirements-part10.md  # Parte 10: Modelo organizacional
-│   ├── 11-requirements-part11.md  # Parte 11: Kit fundacional duplicado
+│   ├── 01-vision-and-architecture.md  # Parte 01: Visión y arquitectura
+│   ├── 02-technical-organization.md  # Parte 02: Organización técnica
+│   ├── 03-engineering-standards.md  # Parte 03: Estándares de ingeniería
+│   ├── 04-operating-model.md  # Parte 04: Modelo operativo
+│   ├── 05-ai-assisted-engineering.md  # Parte 05: Ingeniería asistida por IA
+│   ├── 06-knowledge-architecture.md  # Parte 06: Arquitectura del conocimiento
+│   ├── 07-architecture-governance.md  # Parte 07: Gobierno arquitectónico
+│   ├── 08-operation-model.md  # Parte 08: Modelo de operación
+│   ├── 09-foundational-kit.md  # Parte 09: Kit fundacional
+│   ├── 10-organizational-model.md  # Parte 10: Modelo organizacional
 │   ├── 12-migration-plan.md   # Plan de migración
 │   ├── 13-migration-guide.md  # Guía de migración
 │   └── 14-migration-checklist.md  # Checklist de migración

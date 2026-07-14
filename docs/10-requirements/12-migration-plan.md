@@ -117,57 +117,57 @@ Migrar todo el contenido del directorio `requirements/` a la estructura document
 
 #### Parte 01: Visión, Modelo de Plataforma y Arquitectura Conceptual
 - **Origen**: `requirements/Part01.md`
-- **Destino**: `docs/10-requirements/01-requirements-part01.md`
+- **Destino**: `docs/10-requirements/01-vision-and-architecture.md`
 - **Importancia**: Documento fundacional que define la identidad del producto
 
 #### Parte 02: Organización Técnica y Modelo de Desarrollo
 - **Origen**: `requirements/Part02.md`
-- **Destino**: `docs/10-requirements/02-requirements-part02.md`
+- **Destino**: `docs/10-requirements/02-technical-organization.md`
 - **Importancia**: Define la organización técnica del desarrollo
 
 #### Parte 03: Estándares de Ingeniería y Ejecución Técnica
 - **Origen**: `requirements/Part03.md`
-- **Destino**: `docs/10-requirements/03-requirements-part03.md`
+- **Destino**: `docs/10-requirements/03-engineering-standards.md`
 - **Importancia**: Define los estándares técnicos de la plataforma
 
 #### Parte 04: Modelo Operativo de Ingeniería
 - **Origen**: `requirements/Part04.md`
-- **Destino**: `docs/10-requirements/04-requirements-part04.md`
+- **Destino**: `docs/10-requirements/04-operating-model.md`
 - **Importancia**: Define el modelo operativo de ingeniería
 
 #### Parte 05: Modelo de Ingeniería Asistida por IA
 - **Origen**: `requirements/Part05.md`
-- **Destino**: `docs/10-requirements/05-requirements-part05.md`
+- **Destino**: `docs/10-requirements/05-ai-assisted-engineering.md`
 - **Importancia**: Define la estrategia de ingeniería asistida por IA
 
 #### Parte 06: Arquitectura del Conocimiento y Gobierno Documental
 - **Origen**: `requirements/Part06.md`
-- **Destino**: `docs/10-requirements/06-requirements-part06.md`
+- **Destino**: `docs/10-requirements/06-knowledge-architecture.md`
 - **Importancia**: Define la arquitectura documental de la plataforma
 
 #### Parte 07: Gobierno Arquitectónico y Evolución Tecnológica
 - **Origen**: `requirements/Part07.md`
-- **Destino**: `docs/10-requirements/07-requirements-part07.md`
+- **Destino**: `docs/10-requirements/07-architecture-governance.md`
 - **Importancia**: Define el gobierno arquitectónico de la plataforma
 
 #### Parte 08: Modelo de Operación de la Plataforma
 - **Origen**: `requirements/Part08.md`
-- **Destino**: `docs/10-requirements/08-requirements-part08.md`
+- **Destino**: `docs/10-requirements/08-operation-model.md`
 - **Importancia**: Define el modelo operativo de la plataforma
 
 #### Parte 09: Kit Fundacional de Ejecución
 - **Origen**: `requirements/Part09.md`
-- **Destino**: `docs/10-requirements/09-requirements-part09.md`
+- **Destino**: `docs/10-requirements/09-foundational-kit.md`
 - **Importancia**: Define el kit fundacional de ejecución
 
 #### Parte 10: Modelo Organizacional de Ingeniería
 - **Origen**: `requirements/Part10.md`
-- **Destino**: `docs/10-requirements/10-requirements-part10.md`
+- **Destino**: `docs/10-requirements/10-organizational-model.md`
 - **Importancia**: Define el modelo organizacional de ingeniería
 
 #### Parte 11: Kit Fundacional de Ejecución (Duplicado)
 - **Origen**: `requirements/Part11.md`
-- **Destino**: `docs/10-requirements/11-requirements-part11.md`
+- **Destino**: `docs/10-requirements/09-foundational-kit.md`
 - **Importancia**: Duplicado de Part09 que debe ser consolidado
 
 #### Documentos de Migración

@@ -271,9 +271,9 @@ Los agentes deben seguir los estándares técnicos definidos en:
 - [AI Agents Prompts](../../09-ai-agents/02-ai-agents-prompts.md)
 
 > **Próximos Pasos**:  
-> - Definir [arquitectura del conocimiento](06-requirements-part06.md)  
-> - Establecer [gobierno arquitectónico](07-requirements-part07.md)  
-> - Diseñar [modelo operativo](08-requirements-part08.md)  
+> - Definir [arquitectura del conocimiento](06-knowledge-architecture.md)  
+> - Establecer [gobierno arquitectónico](07-architecture-governance.md)  
+> - Diseñar [modelo operativo](08-operation-model.md)  
 
 ---
 *Versión del documento: 1.0.0 | Creado: 2026-07-07 | Revisión: Trimestral*

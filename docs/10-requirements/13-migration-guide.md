@@ -90,77 +90,77 @@ Esta guía proporciona instrucciones detalladas para la migración de los archiv
 
 #### Paso 2: Migración Individual de Archivos
 
-##### Part01.md → 01-requirements-part01.md
+##### Part01.md → 01-vision-and-architecture.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part02.md → 02-requirements-part02.md
+##### Part02.md → 02-technical-organization.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part03.md → 03-requirements-part03.md
+##### Part03.md → 03-engineering-standards.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part04.md → 04-requirements-part04.md
+##### Part04.md → 04-operating-model.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part05.md → 05-requirements-part05.md
+##### Part05.md → 05-ai-assisted-engineering.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part06.md → 06-requirements-part06.md
+##### Part06.md → 06-knowledge-architecture.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part07.md → 07-requirements-part07.md
+##### Part07.md → 07-architecture-governance.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part08.md → 08-requirements-part08.md
+##### Part08.md → 08-operation-model.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part09.md → 09-requirements-part09.md
+##### Part09.md → 09-foundational-kit.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part10.md → 10-requirements-part10.md
+##### Part10.md → 10-organizational-model.md
 1. Copiar contenido original
 2. Aplicar formato estándar de documentación
 3. Actualizar metadatos (propósito, audiencia, propietario)
 4. Verificar y actualizar referencias internas
 5. Confirmar integridad del contenido
 
-##### Part11.md → 11-requirements-part11.md
+##### Part11.md → 09-foundational-kit.md
 1. Crear documento nuevo indicando que es duplicado de Part09
 2. Incluir referencia al documento original
 3. Explicar razón del duplicado
