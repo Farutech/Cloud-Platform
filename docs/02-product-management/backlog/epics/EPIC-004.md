@@ -1,4 +1,4 @@
-# EPIC-004: Marketplace & Application Catalog
+# EPIC-004: Multi-Tenancy Core
 
 **Estado**: To Do  
 **Story Points**: 50 SP  
@@ -8,16 +8,14 @@
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Marketplace para descubrir, contratar y gestionar aplicaciones con planes.
+Implementación del motor de multi-tenancy híbrido con soporte para modos Shared (schema-per-tenant) y Dedicated (database-per-tenant), incluyendo resolución dinámica de contexto, aislamiento de datos, aprovisionamiento automático de infraestructura y gestión de recursos por plan.
 
 ## Features Asociadas
-- [FEATURE-025](../features/FEATURE-025.md)
-- [FEATURE-026](../features/FEATURE-026.md)
-- [FEATURE-027](../features/FEATURE-027.md)
-- [FEATURE-028](../features/FEATURE-028.md)
-- [FEATURE-029](../features/FEATURE-029.md)
-- [FEATURE-030](../features/FEATURE-030.md)
-- [FEATURE-031](../features/FEATURE-031.md)
+- [FEATURE-020](../features/FEATURE-020.md) - Tenant Context Resolution & Propagation
+- [FEATURE-021](../features/FEATURE-021.md) - Dynamic Database/Schema Provisioning
+- [FEATURE-022](../features/FEATURE-022.md) - Shared vs Dedicated Infrastructure Logic
+- [FEATURE-023](../features/FEATURE-023.md) - Global Query Filters for Data Isolation
+- [FEATURE-024](../features/FEATURE-024.md) - Tenant-Aware Migration Strategy
 
 
 ## Criterios de Aceptación de la Épica

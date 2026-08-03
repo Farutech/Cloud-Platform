@@ -8,14 +8,14 @@
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Sistema centralizado de identidad con Keycloak, SSO, MFA y RBAC.
+Implementación del sistema centralizado de identidad y acceso utilizando Keycloak como proveedor OIDC, con integración SSO, gestión de tokens JWT, RBAC granular, y auditoría de eventos de seguridad para todo el ecosistema Farutech.
 
 ## Features Asociadas
-- [FEATURE-017](../features/FEATURE-017.md)
-- [FEATURE-018](../features/FEATURE-018.md)
-- [FEATURE-019](../features/FEATURE-019.md)
-- [FEATURE-020](../features/FEATURE-020.md)
-- [FEATURE-021](../features/FEATURE-021.md)
+- [FEATURE-015](../features/FEATURE-015.md) - Keycloak Integration & OIDC Setup
+- [FEATURE-016](../features/FEATURE-016.md) - JWT Validation & Token Management
+- [FEATURE-017](../features/FEATURE-017.md) - API Gateway Authentication Middleware
+- [FEATURE-018](../features/FEATURE-018.md) - Granular RBAC System
+- [FEATURE-019](../features/FEATURE-019.md) - Audit Logging for Security Events
 
 
 ## Criterios de Aceptación de la Épica
