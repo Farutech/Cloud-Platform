@@ -1,24 +1,22 @@
-# EPIC-001: Setup Infraestructura & DevOps
+# EPIC-009: POS Application - Inventory
 
 **Estado**: To Do  
-**Story Points**: 40 SP  
-**Horas Estimadas**: 120h  
+**Story Points**: 50 SP  
+**Horas Estimadas**: 150h  
 **Responsable**: Tech Lead  
 **Prioridad**: P0 - Crítica  
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Configurar infraestructura base, CI/CD, repositorios y herramientas de desarrollo.
+Gestión de inventario: stock, compras, alertas de reposición.
 
 ## Features Asociadas
-- [FEATURE-001](../features/FEATURE-001.md)
-- [FEATURE-002](../features/FEATURE-002.md)
-- [FEATURE-003](../features/FEATURE-003.md)
-- [FEATURE-004](../features/FEATURE-004.md)
-- [FEATURE-005](../features/FEATURE-005.md)
-- [FEATURE-006](../features/FEATURE-006.md)
-- [FEATURE-007](../features/FEATURE-007.md)
-- [FEATURE-008](../features/FEATURE-008.md)
+- [FEATURE-065](../features/FEATURE-065.md)
+- [FEATURE-066](../features/FEATURE-066.md)
+- [FEATURE-067](../features/FEATURE-067.md)
+- [FEATURE-068](../features/FEATURE-068.md)
+- [FEATURE-069](../features/FEATURE-069.md)
+- [FEATURE-070](../features/FEATURE-070.md)
 
 
 ## Criterios de Aceptación de la Épica

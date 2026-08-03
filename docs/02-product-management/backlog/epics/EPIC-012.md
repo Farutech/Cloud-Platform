@@ -1,24 +1,23 @@
-# EPIC-001: Setup Infraestructura & DevOps
+# EPIC-012: Provisioning Automation
 
 **Estado**: To Do  
-**Story Points**: 40 SP  
-**Horas Estimadas**: 120h  
+**Story Points**: 55 SP  
+**Horas Estimadas**: 165h  
 **Responsable**: Tech Lead  
 **Prioridad**: P0 - Crítica  
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Configurar infraestructura base, CI/CD, repositorios y herramientas de desarrollo.
+Automatización completa de aprovisionamiento shared/dedicated.
 
 ## Features Asociadas
-- [FEATURE-001](../features/FEATURE-001.md)
-- [FEATURE-002](../features/FEATURE-002.md)
-- [FEATURE-003](../features/FEATURE-003.md)
-- [FEATURE-004](../features/FEATURE-004.md)
-- [FEATURE-005](../features/FEATURE-005.md)
-- [FEATURE-006](../features/FEATURE-006.md)
-- [FEATURE-007](../features/FEATURE-007.md)
-- [FEATURE-008](../features/FEATURE-008.md)
+- [FEATURE-089](../features/FEATURE-089.md)
+- [FEATURE-090](../features/FEATURE-090.md)
+- [FEATURE-091](../features/FEATURE-091.md)
+- [FEATURE-092](../features/FEATURE-092.md)
+- [FEATURE-093](../features/FEATURE-093.md)
+- [FEATURE-094](../features/FEATURE-094.md)
+- [FEATURE-095](../features/FEATURE-095.md)
 
 
 ## Criterios de Aceptación de la Épica

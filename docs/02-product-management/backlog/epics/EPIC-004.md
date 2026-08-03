@@ -1,24 +1,23 @@
-# EPIC-001: Setup Infraestructura & DevOps
+# EPIC-004: Marketplace & Application Catalog
 
 **Estado**: To Do  
-**Story Points**: 40 SP  
-**Horas Estimadas**: 120h  
+**Story Points**: 50 SP  
+**Horas Estimadas**: 150h  
 **Responsable**: Tech Lead  
 **Prioridad**: P0 - Crítica  
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Configurar infraestructura base, CI/CD, repositorios y herramientas de desarrollo.
+Marketplace para descubrir, contratar y gestionar aplicaciones con planes.
 
 ## Features Asociadas
-- [FEATURE-001](../features/FEATURE-001.md)
-- [FEATURE-002](../features/FEATURE-002.md)
-- [FEATURE-003](../features/FEATURE-003.md)
-- [FEATURE-004](../features/FEATURE-004.md)
-- [FEATURE-005](../features/FEATURE-005.md)
-- [FEATURE-006](../features/FEATURE-006.md)
-- [FEATURE-007](../features/FEATURE-007.md)
-- [FEATURE-008](../features/FEATURE-008.md)
+- [FEATURE-025](../features/FEATURE-025.md)
+- [FEATURE-026](../features/FEATURE-026.md)
+- [FEATURE-027](../features/FEATURE-027.md)
+- [FEATURE-028](../features/FEATURE-028.md)
+- [FEATURE-029](../features/FEATURE-029.md)
+- [FEATURE-030](../features/FEATURE-030.md)
+- [FEATURE-031](../features/FEATURE-031.md)
 
 
 ## Criterios de Aceptación de la Épica

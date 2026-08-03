@@ -1,24 +1,22 @@
-# EPIC-001: Setup Infraestructura & DevOps
+# EPIC-011: Security Hardening
 
 **Estado**: To Do  
-**Story Points**: 40 SP  
-**Horas Estimadas**: 120h  
+**Story Points**: 45 SP  
+**Horas Estimadas**: 135h  
 **Responsable**: Tech Lead  
 **Prioridad**: P0 - Crítica  
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Configurar infraestructura base, CI/CD, repositorios y herramientas de desarrollo.
+Refuerzo de seguridad: cifrado, auditoría, scanning, compliance.
 
 ## Features Asociadas
-- [FEATURE-001](../features/FEATURE-001.md)
-- [FEATURE-002](../features/FEATURE-002.md)
-- [FEATURE-003](../features/FEATURE-003.md)
-- [FEATURE-004](../features/FEATURE-004.md)
-- [FEATURE-005](../features/FEATURE-005.md)
-- [FEATURE-006](../features/FEATURE-006.md)
-- [FEATURE-007](../features/FEATURE-007.md)
-- [FEATURE-008](../features/FEATURE-008.md)
+- [FEATURE-081](../features/FEATURE-081.md)
+- [FEATURE-082](../features/FEATURE-082.md)
+- [FEATURE-083](../features/FEATURE-083.md)
+- [FEATURE-084](../features/FEATURE-084.md)
+- [FEATURE-085](../features/FEATURE-085.md)
+- [FEATURE-086](../features/FEATURE-086.md)
 
 
 ## Criterios de Aceptación de la Épica

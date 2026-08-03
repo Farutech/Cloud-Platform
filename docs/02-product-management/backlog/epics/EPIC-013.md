@@ -1,24 +1,20 @@
-# EPIC-001: Setup Infraestructura & DevOps
+# EPIC-013: Team Onboarding Program
 
 **Estado**: To Do  
-**Story Points**: 40 SP  
-**Horas Estimadas**: 120h  
+**Story Points**: 30 SP  
+**Horas Estimadas**: 90h  
 **Responsable**: Tech Lead  
 **Prioridad**: P0 - Crítica  
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Configurar infraestructura base, CI/CD, repositorios y herramientas de desarrollo.
+Programa estructurado de onboarding para nuevos integrantes.
 
 ## Features Asociadas
-- [FEATURE-001](../features/FEATURE-001.md)
-- [FEATURE-002](../features/FEATURE-002.md)
-- [FEATURE-003](../features/FEATURE-003.md)
-- [FEATURE-004](../features/FEATURE-004.md)
-- [FEATURE-005](../features/FEATURE-005.md)
-- [FEATURE-006](../features/FEATURE-006.md)
-- [FEATURE-007](../features/FEATURE-007.md)
-- [FEATURE-008](../features/FEATURE-008.md)
+- [FEATURE-097](../features/FEATURE-097.md)
+- [FEATURE-098](../features/FEATURE-098.md)
+- [FEATURE-099](../features/FEATURE-099.md)
+- [FEATURE-100](../features/FEATURE-100.md)
 
 
 ## Criterios de Aceptación de la Épica

@@ -1,24 +1,21 @@
-# EPIC-001: Setup Infraestructura & DevOps
+# EPIC-003: Identity & Access Management
 
 **Estado**: To Do  
-**Story Points**: 40 SP  
-**Horas Estimadas**: 120h  
+**Story Points**: 55 SP  
+**Horas Estimadas**: 165h  
 **Responsable**: Tech Lead  
 **Prioridad**: P0 - Crítica  
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Configurar infraestructura base, CI/CD, repositorios y herramientas de desarrollo.
+Sistema centralizado de identidad con Keycloak, SSO, MFA y RBAC.
 
 ## Features Asociadas
-- [FEATURE-001](../features/FEATURE-001.md)
-- [FEATURE-002](../features/FEATURE-002.md)
-- [FEATURE-003](../features/FEATURE-003.md)
-- [FEATURE-004](../features/FEATURE-004.md)
-- [FEATURE-005](../features/FEATURE-005.md)
-- [FEATURE-006](../features/FEATURE-006.md)
-- [FEATURE-007](../features/FEATURE-007.md)
-- [FEATURE-008](../features/FEATURE-008.md)
+- [FEATURE-017](../features/FEATURE-017.md)
+- [FEATURE-018](../features/FEATURE-018.md)
+- [FEATURE-019](../features/FEATURE-019.md)
+- [FEATURE-020](../features/FEATURE-020.md)
+- [FEATURE-021](../features/FEATURE-021.md)
 
 
 ## Criterios de Aceptación de la Épica

@@ -1,24 +1,24 @@
-# EPIC-001: Setup Infraestructura & DevOps
+# EPIC-008: POS Application - Sales Module
 
 **Estado**: To Do  
-**Story Points**: 40 SP  
-**Horas Estimadas**: 120h  
+**Story Points**: 70 SP  
+**Horas Estimadas**: 210h  
 **Responsable**: Tech Lead  
 **Prioridad**: P0 - Crítica  
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Configurar infraestructura base, CI/CD, repositorios y herramientas de desarrollo.
+Módulo de ventas POS: transacciones, pagos, tickets y reportes.
 
 ## Features Asociadas
-- [FEATURE-001](../features/FEATURE-001.md)
-- [FEATURE-002](../features/FEATURE-002.md)
-- [FEATURE-003](../features/FEATURE-003.md)
-- [FEATURE-004](../features/FEATURE-004.md)
-- [FEATURE-005](../features/FEATURE-005.md)
-- [FEATURE-006](../features/FEATURE-006.md)
-- [FEATURE-007](../features/FEATURE-007.md)
-- [FEATURE-008](../features/FEATURE-008.md)
+- [FEATURE-057](../features/FEATURE-057.md)
+- [FEATURE-058](../features/FEATURE-058.md)
+- [FEATURE-059](../features/FEATURE-059.md)
+- [FEATURE-060](../features/FEATURE-060.md)
+- [FEATURE-061](../features/FEATURE-061.md)
+- [FEATURE-062](../features/FEATURE-062.md)
+- [FEATURE-063](../features/FEATURE-063.md)
+- [FEATURE-064](../features/FEATURE-064.md)
 
 
 ## Criterios de Aceptación de la Épica

@@ -1,24 +1,22 @@
-# EPIC-001: Setup Infraestructura & DevOps
+# EPIC-002: Multi-Tenancy Core
 
 **Estado**: To Do  
-**Story Points**: 40 SP  
-**Horas Estimadas**: 120h  
+**Story Points**: 65 SP  
+**Horas Estimadas**: 195h  
 **Responsable**: Tech Lead  
 **Prioridad**: P0 - Crítica  
 **Fase Roadmap**: Fase 2
 
 ## Descripción
-Configurar infraestructura base, CI/CD, repositorios y herramientas de desarrollo.
+Implementar aislamiento de datos con modelo híbrido Schema-per-Organization + Database-per-Instance.
 
 ## Features Asociadas
-- [FEATURE-001](../features/FEATURE-001.md)
-- [FEATURE-002](../features/FEATURE-002.md)
-- [FEATURE-003](../features/FEATURE-003.md)
-- [FEATURE-004](../features/FEATURE-004.md)
-- [FEATURE-005](../features/FEATURE-005.md)
-- [FEATURE-006](../features/FEATURE-006.md)
-- [FEATURE-007](../features/FEATURE-007.md)
-- [FEATURE-008](../features/FEATURE-008.md)
+- [FEATURE-009](../features/FEATURE-009.md)
+- [FEATURE-010](../features/FEATURE-010.md)
+- [FEATURE-011](../features/FEATURE-011.md)
+- [FEATURE-012](../features/FEATURE-012.md)
+- [FEATURE-013](../features/FEATURE-013.md)
+- [FEATURE-014](../features/FEATURE-014.md)
 
 
 ## Criterios de Aceptación de la Épica
