@@ -1,11 +1,33 @@
-# Generated validation reports (produced by docs/validate_structure.sh)
+# Build results
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Environment & Config
+.env
+.env.*
+!.env.example
+*.log
+
+# Generated validation reports
 docs/validation_report_*.log
 validation_report_*.log
 
-# OS / editor noise
+# OS & Editor
 .DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
 *.swp
+*.tmp
+*.bak
+*scratch*
 
-bin/
-obj/
-
+# Test results
+TestResults/
+coverage/
