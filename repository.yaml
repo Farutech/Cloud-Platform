@@ -9,7 +9,7 @@ id: "plt-core-platform"
 metadata:
   name: "plt-core-platform"
   id: "plt-core-platform"
-  repository: "Farutech/Cloud-Platform"
+  repository: "Farutech/plt-core-platform"
   description: "Núcleo tecnológico PaaS Multi-SaaS de FaruTech: Control Plane, Provisioning Engine, Aislamiento Shared/Dedicated y Ruteo Dinámico"
   type: "platform-core"
   domain: "plt-core-platform"
