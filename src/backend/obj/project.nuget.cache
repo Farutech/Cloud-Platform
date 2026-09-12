@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "mdKWTT8qjoY=",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\Farutech\\repos\\Cloud-Platform\\src\\backend\\Farutech.Platform.ControlPlane.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\farid\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0\\microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\stackexchange.redis\\2.8.24\\stackexchange.redis.2.8.24.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\microsoft.netcore.app.ref\\10.0.2\\microsoft.netcore.app.ref.10.0.2.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\10.0.2\\microsoft.windowsdesktop.app.ref.10.0.2.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\10.0.2\\microsoft.aspnetcore.app.ref.10.0.2.nupkg.sha512",
+    "C:\\Users\\farid\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\10.0.2\\microsoft.netcore.app.host.win-x64.10.0.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "El paquete \"Microsoft.OpenApi\" 2.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "projectPath": "D:\\Projects\\Farutech\\repos\\Cloud-Platform\\src\\backend\\Farutech.Platform.ControlPlane.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Projects\\Farutech\\repos\\Cloud-Platform\\src\\backend\\Farutech.Platform.ControlPlane.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

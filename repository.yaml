@@ -1,0 +1,65 @@
+# ==============================================================================
+# FaruTech Repository Contract
+# Schema Version: 1.0.0
+# Repository: Farutech/Cloud-Platform
+# ==============================================================================
+
+schema_version: "1.0.0"
+metadata:
+  name: "plt-core-platform"
+  repository: "Farutech/Cloud-Platform"
+  description: "Núcleo tecnológico PaaS Multi-SaaS de FaruTech: Control Plane, Provisioning Engine, Aislamiento Shared/Dedicated y Ruteo Dinámico"
+  type: "platform-core"
+  domain: "plt-core-platform"
+  status: "active"
+  tier: "tier-1"
+
+ownership:
+  team: "Farutech/platform-core"
+  lead: "Farid Maloof"
+  slack_channel: "#eng-platform-core"
+  escalation: "architecture@farutech.com"
+
+governance:
+  adr_directory: "docs/03-architecture-and-standards/01-architecture-decision-records"
+  standards_compliance:
+    - "FEKS-01-Architecture"
+    - "FEKS-08-Security"
+    - "FEKS-11-MultiTenant"
+    - "Clean-Architecture-DotNet10"
+
+technology_stack:
+  control_plane:
+    language: "C#"
+    runtime: ".NET 10"
+    framework: "ASP.NET Core Web API"
+    architecture: "Modular Monolith + Clean Architecture (CQRS)"
+  persistence:
+    engine: "PostgreSQL 17"
+    multi_tenancy:
+      shared_mode: "Schema-per-tenant (org_{id})"
+      dedicated_mode: "Isolated PostgreSQL database and container"
+  cache_and_broker:
+    cache: "Redis 7"
+    broker: "RabbitMQ / Mosquitto MQTT"
+
+interfaces:
+  provisioning_api:
+    protocol: "HTTPS / REST"
+    port: 5000
+    specification: "OpenAPI 3.1"
+  contracts:
+    application_runtime: "application.yaml"
+
+dependencies:
+  internal:
+    - name: "@farutech/design-system"
+      type: "npm"
+      version: "^1.0.3"
+    - name: "Farutech.Framework.Automation"
+      type: "nuget"
+      version: "^1.0.0"
+  external:
+    - "PostgreSQL 17"
+    - "Redis 7"
+    - "HAProxy Gateway"
