@@ -5,3 +5,7 @@ validation_report_*.log
 # OS / editor noise
 .DS_Store
 *.swp
+
+bin/
+obj/
+
