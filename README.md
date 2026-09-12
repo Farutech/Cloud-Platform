@@ -1,6 +1,12 @@
-# Farutech Cloud Platform
+> [!WARNING]
+> **ESTE REPOSITORIO HA SIDO DEPRECADO Y ARCHIVADO**
+>
+> Las especificaciones arquitectónicas originales y estándares técnicos han sido migrados y consolidados en el centro de gobernanza oficial [Farutech/engineering-hub](https://github.com/Farutech/engineering-hub) bajo `docs/02_standards/cloud-platform/`.
+> Este repositorio se conserva exclusivamente para fines de trazabilidad histórica.
 
-Bienvenido al repositorio principal de **Farutech Cloud Platform**, una plataforma SaaS modular para la creación, operación y distribución de aplicaciones empresariales.
+# Farutech Cloud Platform [ARCHIVADO]
+
+Bienvenido al repositorio histórico de **Farutech Cloud Platform**.
 
 ---
 
